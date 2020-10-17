@@ -37,7 +37,7 @@
                   <td><?= nl2br(htmlspecialchars($instansi['kontak'])); ?></td>
                   <td><?= $instansi['username']; ?></td>
                   <!-- <td><img style="width: 150px" src="data:image/jpeg;base64,<?=base64_encode($instansi['foto']);?>"></td> -->
-                  <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?php echo base_url('Kelurahan/hapus/'.$instansi['id'])?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
+                  <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?php echo base_url('Kelurahan/hapus/'.$instansi['id_kelurahan'])?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
                 </tr>
                 <?php $no++; ?>
               <?php endforeach; ?>

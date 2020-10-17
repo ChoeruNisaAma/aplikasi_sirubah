@@ -34,14 +34,14 @@ class Pengajuan_surat extends CI_Controller {
     {
       if($this->session->userdata('nik')){
         $data['title'] = 'Daftar Surat';
-        $id = $this->uri->segment(3);
-        $info['jenis_srt'] = $this->m_surat->lihat_syarat($id);
+        $id_syarat = $this->uri->segment(3);
+        $info['jenis_srt'] = $this->m_surat->lihat_syarat($id_syarat);
 
         $this->load->view('Masyarakat/templates/header', $data);
         $this->load->view('Masyarakat/templates/sidebar');
         $this->load->view('Masyarakat/templates/topbar');
 
-        switch($id){
+        switch($id_syarat){
           case '1':
             $this->load->view('Masyarakat/surat/v_BDT', $info);
             break;

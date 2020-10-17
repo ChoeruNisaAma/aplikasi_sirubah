@@ -18,11 +18,11 @@ class M_surat extends CI_Model{
     return $query->result_array();   
   }
 
-  public function lihat_syarat($id)
+  public function lihat_syarat($id_syarat)
   { 
     $this->db->select('*');
     $this->db->from('jenis_surat');
-    $this->db->where('id_surat', $id);
+    $this->db->where('id_surat', $id_syarat);
     $query = $this->db->get();
 
   	return $query->row_array();

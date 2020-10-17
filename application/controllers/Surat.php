@@ -31,8 +31,8 @@ class Surat extends CI_Controller {
     public function syarat()
     {
       $data['title'] = 'Daftar Surat';
-      $id = $this->uri->segment(3);
-      $info['surat'] = $this->m_surat->lihat_syarat($id);
+      $id_syarat = $this->uri->segment(3);
+      $info['surat'] = $this->m_surat->lihat_syarat($id_syarat);
 
       $this->load->view('Administrator/templates/auth_header', $data);
       $this->load->view('Administrator/templates/sidebar');
@@ -55,8 +55,8 @@ class Surat extends CI_Controller {
     public function edit($id_surat)
     {
       $data['title'] = 'Edit Surat'; 
-      $id = $this->uri->segment(3);
-      $info['surat'] = $this->m_surat->lihat_syarat($id);
+      $id_syarat = $this->uri->segment(3);
+      $info['surat'] = $this->m_surat->lihat_syarat($id_syarat);
 
       $this->form_validation->set_rules('jenis', 'Jenis Surat', 'required');
       $this->form_validation->set_rules('syarat', 'Persyaratan', 'required');

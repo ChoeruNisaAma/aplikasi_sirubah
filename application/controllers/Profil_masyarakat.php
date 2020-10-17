@@ -54,8 +54,8 @@
         
         $nama = $this->input->post('nama');
         $kelurahan = $this->input->post('kelurahan');
-        $rt = $this->input->post('rt');
-        $rw = $this->input->post('rw');
+        $namart = $this->input->post('rt');
+        $namarw = $this->input->post('rw');
         $email = $this->input->post('email');
         $nohp = $this->input->post('nohp');
         $alamat = $this->input->post('alamat');
@@ -83,8 +83,8 @@
           $data = array(
             'nama'   => $nama,
             'kelurahan'  => $kelurahan,
-            'nama_rt'  => $rt,
-            'nama_rw'  => $rw,
+            'nama_rt'  => $namart,
+            'nama_rw'  => $namarw,
             'email_msy'  => $email,
             'no_hp'  => $nohp,
             'alamat'  => $alamat
@@ -94,8 +94,8 @@
           $data = array(
             'nama'   => $nama,
             'kelurahan'  => $kelurahan,
-            'nama_rt'  => $rt,
-            'nama_rw'  => $rw,
+            'nama_rt'  => $namart,
+            'nama_rw'  => $namarw,
             'email_msy'  => $email,
             'no_hp'  => $nohp,
             'alamat'  => $alamat,

@@ -33,7 +33,6 @@ class Kelurahan extends CI_Controller {
         $alamat = $this->input->post('alamat');
         $username = $this->input->post('username');
         $kontak = $this->input->post('kontak');
-        $email = $this->input->post('email');
         $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
         $data = array(
@@ -59,9 +58,9 @@ class Kelurahan extends CI_Controller {
   }
 
   //fungsi hapus kelurahan
-  public function hapus($id)
+  public function hapus($id_kelurahan)
   {
-    $where = array('id' => $id );
+    $where = array('id' => $id_kelurahan );
     $this->m_kelurahan->hapus_data($where, 'pengurus');
     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data berhasil dihapus</div>');
     redirect('Kelurahan/index');

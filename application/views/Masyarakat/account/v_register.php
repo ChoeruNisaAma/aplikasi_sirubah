@@ -24,14 +24,14 @@
 
               <?= form_open_multipart('Register'); ?>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="nama" name="name" placeholder="Nama Lengkap" value="<?= set_value('name'); ?>">
-                    <?= form_error('name', '<small class="text-danger text-left pl-3">', '</small>'); ?> 
+                    <input type="text" class="form-control" id="nama" name="name" placeholder="Nama Lengkap" value="<?php echo set_value('name'); ?>">
+                    <?php echo form_error('name', '<small class="text-danger text-left pl-3">', '</small>'); ?> 
                   </div>
                  
 
                 <div class="form-group">
-                  <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" value="<?= set_value('nik'); ?>">
-                  <?= form_error('nik', '<small class="text-danger pl-3">', '</small>'); ?>
+                  <input type="text" class="form-control" id="nik" name="nik" placeholder="NIK" value="<?php echo set_value('nik'); ?>">
+                  <?php echo form_error('nik', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
 
                 <div class="row mb-3">

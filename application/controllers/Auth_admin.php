@@ -22,9 +22,9 @@ class Auth_admin extends CI_Controller
             $this->load->view('Administrator/templates/auth_header', $data);
             $this->load->view('Administrator/auth/v_login');
             $this->load->view('Administrator/templates/auth_footer');
-        } else {
-            $this->auth();
-        }
+        } 
+        
+        $this->auth();
     }
 
     //fungsi login
@@ -41,16 +41,12 @@ class Auth_admin extends CI_Controller
                 redirect('Konten');
 
             } 
-            else{
-               $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Password salah</div>');
-               redirect('Auth_admin');
-            }
-
-        } 
-        else{
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun belum terdaftar</div>');
-            redirect('Auth_admin');
+           
+           $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Password salah</div>');
+           redirect('Auth_admin');
         }
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Akun belum terdaftar</div>');
+        redirect('Auth_admin');
     }
 
     //fungsi logout
@@ -71,28 +67,26 @@ class Auth_admin extends CI_Controller
             $this->load->view('Administrator/auth/v_kirim_email');
             $this->load->view('Administrator/templates/auth_footer');
         } 
-        else {
-            $email = $this->input->post('email');
-            $user = $this->db->get_where('administrator', ['email' => $email]) -> row_array();
 
-            if($user){
-                $token = base64_encode(random_bytes(32));
-                    $user_token = [
-                        'email' => $email,
-                        'token' => $token,
-                        'date_created' => tanggal()
-                    ];
-                $this->db->insert('user_token', $user_token);
-                $this->_kirimEmail($token);
+        $email = $this->input->post('email');
+        $user = $this->db->get_where('administrator', ['email' => $email]) -> row_array();
 
-                $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Silahkan cek email Anda untuk ganti kata sandi!</div>');
-                redirect('Auth_admin');
-            }
-            else{
-                $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Email belum terdaftar</div>');
-                redirect('Auth_admin');
-            }
-        } 
+        if($user){
+            $token = base64_encode(random_bytes(32));
+                $user_token = [
+                    'email' => $email,
+                    'token' => $token,
+                    'date_created' => tanggal()
+                ];
+            $this->db->insert('user_token', $user_token);
+            $this->_kirimEmail($token);
+
+            $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Silahkan cek email Anda untuk ganti kata sandi!</div>');
+            redirect('Auth_admin');
+        }
+        $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Email belum terdaftar</div>');
+        redirect('Auth_admin');
+
     }
 
 

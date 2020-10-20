@@ -23,10 +23,8 @@ class Cek_status extends CI_Controller {
       $this->load->view('Masyarakat/templates/p_footer');
       $this->load->view('Masyarakat/templates/footer');
     } 
-    else {
-      redirect('Auth_Masyarakat');
-    } 
-         // var_dump($this->m_surat->surat_masuk($this->session->userdata('nik'))); die;
+    
+    redirect('Auth_Masyarakat'); 
   }
 }
 

@@ -21,9 +21,7 @@
         $this->load->view('Administrator/templates/p_footer');
         $this->load->view('Administrator/templates/auth_footer');
       }
-      else {
-        redirect('Auth_admin');
-      }
+      redirect('Auth_admin');
     }
 
     //fungsi hapus konten

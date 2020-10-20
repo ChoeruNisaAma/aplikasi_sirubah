@@ -26,9 +26,9 @@ class Auth_masyarakat extends CI_Controller
             $this->load->view('Masyarakat/templates/header', $data);
             $this->load->view('Masyarakat/account/v_login');
             $this->load->view('Masyarakat/templates/footer');
-        } else {
-            $this->auth();
-        }
+        } 
+        
+        $this->auth();
     }
 
     private function auth()

@@ -102,15 +102,13 @@ class Auth_admin extends CI_Controller
             if($user_token){
                 $this->session->set_userdata('email', $email);
                 $this->changePassword();
-            } else {
-                $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Ganti Kata Sandi gagal, Token Salah!</div>');
-                redirect('Auth_admin/lupa_password');
             }
-        }
-        else{
-            $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Ganti Kata Sandi gagal, Email belum terdaftar!</div>');
+            
+            $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Ganti Kata Sandi gagal, Token Salah!</div>');
             redirect('Auth_admin/lupa_password');
         }
+        $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Ganti Kata Sandi gagal, Email belum terdaftar!</div>');
+        redirect('Auth_admin/lupa_password');
     }
 
     //fungsi kirim email
@@ -137,10 +135,10 @@ class Auth_admin extends CI_Controller
 
         if($this->email->send()){
             return true;
-        } else {
-            echo $this->email->print_debugger();
-            die;
         }
+        
+        echo $this->email->print_debugger();
+        die;
     }
 
 
@@ -155,19 +153,19 @@ class Auth_admin extends CI_Controller
             $this->load->view('Administrator/templates/auth_header', $data);
             $this->load->view('Administrator/auth/v_reset_password');
             $this->load->view('Administrator/templates/auth_footer');
-        } else {
-            $password1 = password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
-            $email = $this->session->userdata('email');
-
-            $this->db->set('password', $password1);
-            $this->db->where('email', $email);
-            $this->db->update('administrator');
-
-            $this->session->unset_userdata('email');
-
-            $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Kata Sandi berhasil diubah, silahkan masuk!</div>');
-            redirect('Auth_admin/index');
         }
+
+        $password1 = password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
+        $email = $this->session->userdata('email');
+
+        $this->db->set('password', $password1);
+        $this->db->where('email', $email);
+        $this->db->update('administrator');
+
+        $this->session->unset_userdata('email');
+
+        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Kata Sandi berhasil diubah, silahkan masuk!</div>');
+        redirect('Auth_admin/index');
     }
 }
 

@@ -26,7 +26,6 @@ class Administrator extends CI_Controller {
       $this->load->view('Administrator/templates/p_footer');
       $this->load->view('Administrator/templates/auth_footer');
     } 
-    else{
       $username = $this->input->post('username');
       $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
       $email = $this->input->post('email');
@@ -39,8 +38,7 @@ class Administrator extends CI_Controller {
 
       $this->db->insert('administrator', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Akun telah berhasil dibuat</div>');
-      redirect('Administrator/index');
-    }        
+      redirect('Administrator/index');       
   }
 
   //fungsi hapus admin

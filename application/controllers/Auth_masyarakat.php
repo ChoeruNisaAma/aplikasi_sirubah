@@ -47,15 +47,13 @@ class Auth_masyarakat extends CI_Controller
                 ];
                 $this->session->set_userdata($data);
                 redirect('Page_Masyarakat');
-            } else{
-               $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Kata Sandi salah</div>');
-               redirect('Auth_Masyarakat');
             }
-
-        } else{
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">NIK belum terdaftar</div>');
+            $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Kata Sandi salah</div>');
             redirect('Auth_Masyarakat');
         }
+        
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">NIK belum terdaftar</div>');
+        redirect('Auth_Masyarakat');
     }
 
 

@@ -22,9 +22,9 @@ class Surat extends CI_Controller {
         $this->load->view('Administrator/templates/p_footer');
         $this->load->view('Administrator/templates/auth_footer');
       }
-      else {
+
         redirect('Auth_admin');
-      }
+
     }
 
     //tampilan syarat surat
@@ -71,7 +71,7 @@ class Surat extends CI_Controller {
           $this->load->view('Administrator/admin/v_edit_surat', $info);
           $this->load->view('Administrator/templates/p_footer');
           $this->load->view('Administrator/templates/auth_footer', $info);
-        } else{
+        }
           $id_surat = $this->input->post('id', true);
           $jenis = $this->input->post('jenis');
           $syarat = $this->input->post('syarat');
@@ -91,7 +91,6 @@ class Surat extends CI_Controller {
           $this->db->update('jenis_surat', $data);
           $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Jenis surat berhasil diubah.</div>');
           redirect('Surat/index');
-      }
     }
   }
 

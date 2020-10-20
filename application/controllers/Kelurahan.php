@@ -28,7 +28,7 @@ class Kelurahan extends CI_Controller {
         $this->load->view('Administrator/admin/v_Kelurahan', $info);
         $this->load->view('Administrator/templates/p_footer');
         $this->load->view('Administrator/templates/auth_footer');
-      } else{
+      } 
         $instansi = $this->input->post('instansi');
         $alamat = $this->input->post('alamat');
         $username = $this->input->post('username');
@@ -50,11 +50,11 @@ class Kelurahan extends CI_Controller {
         $this->db->insert('pengurus', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Akun Anda telah berhasil diubah</div>');
         redirect('Kelurahan/index');
-      }       
+            
     }
-    else {
+
       redirect('Auth_admin');
-    }
+
   }
 
   //fungsi hapus kelurahan

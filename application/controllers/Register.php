@@ -33,7 +33,7 @@
             $this->load->view('Masyarakat/templates/header', $data);
             $this->load->view('Masyarakat/account/v_register', $info);
             $this->load->view('Masyarakat/templates/footer');
-        }else{
+        }
             $image = $_FILES['image']['name'];
 
             if($image==''){
@@ -42,7 +42,7 @@
                 $this->load->view('Masyarakat/account/v_register', $info);
                 $this->load->view('Masyarakat/templates/footer');
 
-            }else{
+            }
                 $nama = htmlspecialchars($this->input->post('name', true));
                 $nik = htmlspecialchars($this->input->post('nik', true));
                 $password = password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
@@ -66,7 +66,7 @@
                     $this->load->view('Masyarakat/templates/header', $data);
                     $this->load->view('Masyarakat/account/v_register', $info);
                     $this->load->view('Masyarakat/templates/footer');
-                }else{
+                }
                     $image = $this->upload->data('file_name');
                     $data = array(
                         'nama' => $nama,
@@ -83,9 +83,9 @@
                     );
                     
                 $this->m_account->daftar($data);
-                } 
-            }
-        }
+                
+            
+        
     }
 }
 

@@ -5,7 +5,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-3">
     <h1 class="h3 mb-0">JENIS SURAT</h1>
   </div>
-  <?php echo $this->session->flashdata('message'); ?>
+  <?= $this->session->flashdata('message'); ?>
     <div class="card shadow">
       <div class="container-fluid">
       <div class="row">

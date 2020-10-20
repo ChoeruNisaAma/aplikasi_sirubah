@@ -32,7 +32,7 @@
           </table>
         </div>    
         <div>
-          <a href="<?php echo base_url('Surat/index')?>" class="btn btn-secondary" >Kembali</a>
+          <a href="<?= base_url('Surat/index')?>" class="btn btn-secondary" >Kembali</a>
         </div>
       </div>
     </div>              

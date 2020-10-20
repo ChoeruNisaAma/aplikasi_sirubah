@@ -21,7 +21,7 @@
                   </div>
                   <hr>
 
-                  <?php echo $this->session->flashdata('message'); ?>
+                  <?= $this->session->flashdata('message'); ?>
                   <form class="form-signin" action="<?= base_url('Auth_masyarakat/changePassword'); ?>" method="post">
                   
                   <?= form_error('password1', '<small class="alert alert-warning" pl-10>', '</small>'); ?>

@@ -21,7 +21,7 @@
                   </div>
 
 
-                  <?php echo $this->session->flashdata('message'); ?>
+                  <?= $this->session->flashdata('message'); ?>
                   <form class="form-signin" action="<?= base_url('Auth_Masyarakat/lupa_password'); ?>" method="post">
                   <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
                   <div class="input-group form-group">

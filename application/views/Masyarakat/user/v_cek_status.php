@@ -6,7 +6,7 @@
       <h1 class="h3 text-black-800">STATUS PERMOHONAN</h1>
     </div>
 
-    <?php echo $this->session->flashdata('message'); ?>
+    <?= $this->session->flashdata('message'); ?>
     <!-- Tabs -->
     <div class="card">
       <!-- Nav tabs -->
@@ -62,7 +62,7 @@
                           <td><?= $surat_masuk['status']; ?></td>
                           <td><?= $surat_masuk['komentar']; ?></td>
                           <td> 
-                            <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?php echo base_url('pengajuan_surat/hapus_pengajuan/'.$surat_masuk['id_surat_masuk'])?>')" data-toggle="modal" data-target="#hapusModal"></a>
+                            <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= base_url('pengajuan_surat/hapus_pengajuan/'.$surat_masuk['id_surat_masuk'])?>')" data-toggle="modal" data-target="#hapusModal"></a>
                           </td>  
                         </tr>
                       <?php $no++; ?>
@@ -103,7 +103,7 @@
                         <td><?= $surat_ditolak['status']; ?></td>
                         <td><?= $surat_ditolak['komentar']; ?></td>
                         <td> 
-                          <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?php echo base_url('pengajuan_surat/hapus_pengajuan/'.$surat_ditolak['id_surat_masuk'])?>')" data-toggle="modal" data-target="#hapusModal"></a>
+                          <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= base_url('pengajuan_surat/hapus_pengajuan/'.$surat_ditolak['id_surat_masuk'])?>')" data-toggle="modal" data-target="#hapusModal"></a>
                         </td>
                       </tr>
                     <?php $noo++; ?>

@@ -26,7 +26,7 @@
                   </div>
                 </div>
 
-                  <?php echo $this->session->flashdata('message'); ?>
+                  <?= $this->session->flashdata('message'); ?>
                   <form class="form-signin" action="<?= base_url('Auth_admin/index'); ?>" method="post">
                   
                   <div class="input-group form-group">

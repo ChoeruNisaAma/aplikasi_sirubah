@@ -5,7 +5,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0">DAFTAR ADMINISTRATOR</h1>
   </div>
-  <?php echo $this->session->flashdata('message'); ?>
+  <?= $this->session->flashdata('message'); ?>
     <div class="card shadow">
       <div class="container-fluid">
       <div class="row">
@@ -27,7 +27,7 @@
               <tr>
                 <th scope="row"><?= $no; ?></th>
                 <td><?= $admin['username']; ?></td>
-                <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?php echo base_url('Administrator/hapus/'.$admin['username'])?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
+                <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= base_url('Administrator/hapus/'.$admin['username'])?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
               </tr>
               <?php $no++; ?>
             <?php endforeach; ?>

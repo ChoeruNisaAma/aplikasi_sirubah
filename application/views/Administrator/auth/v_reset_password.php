@@ -21,7 +21,7 @@
                     <h5 class="mb-4"><?= $this->session->userdata('email'); ?></h5>
                   </div>
 
-                  <?php echo $this->session->flashdata('message'); ?>
+                  <?= $this->session->flashdata('message'); ?>
                   <form class="form-signin" action="<?= base_url('Auth_admin/changePassword'); ?>" method="post">
                   
                   <?= form_error('password1', '<small class="alert alert-warning" pl-10>', '</small>'); ?>

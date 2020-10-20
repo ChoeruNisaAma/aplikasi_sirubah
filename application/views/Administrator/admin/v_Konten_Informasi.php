@@ -6,7 +6,7 @@
     <h1 class="h3 mb-0 text-gray-800">KONTEN INFORMASI</h1>
   </div>
 
-  <?php echo $this->session->flashdata('message'); ?>
+  <?= $this->session->flashdata('message'); ?>
     <!-- Illustrations -->
     <div>
       <a href="<?= base_url('Konten/add');?>" class="btn btn-primary"><i class="fas fa-plus-square"></i> Tambah Konten</a>

@@ -14,7 +14,7 @@
 
               <div class="row">
                 <div class="col-lg-6">
-                  <?php echo $this->session->flashdata('message'); ?>
+                  <?= $this->session->flashdata('message'); ?>
                   <form action="<?= base_url('Password_Masyarakat'); ?>" method="post">
                     <div class="form-group">
                       <strong for="password">Kata Sandi lama</strong>

@@ -23,7 +23,7 @@
               </div>
             </div>
 
-            <?php echo $this->session->flashdata('message'); ?>
+            <?= $this->session->flashdata('message'); ?>
             <form class="form-horizontal" action="<?= base_url('Auth_Masyarakat/index'); ?>" method="post">
             
             <?= form_error('nik', '<small class="alert alert-danger">', '</small>'); ?>

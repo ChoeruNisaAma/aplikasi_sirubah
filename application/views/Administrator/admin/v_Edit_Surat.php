@@ -12,7 +12,7 @@
           <div class="form-group row">
             <div class="col-sm-10">
 
-              <?php echo $this->session->flashdata('message'); ?>
+              <?= $this->session->flashdata('message'); ?>
               <?= form_open_multipart('Surat/edit/'.$surat['id_surat']); ?>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?= $surat['id_surat']; ?>">
                 <div class="form-group row">

@@ -8,7 +8,7 @@
     
     <div class="row">
         <div class="col">
-            <?php echo $this->session->flashdata('message'); ?>
+            <?= $this->session->flashdata('message'); ?>
         </div>
     </div>
     

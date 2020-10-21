@@ -27,27 +27,26 @@
         $this->load->view('Masyarakat/templates/p_footer');
         $this->load->view('Masyarakat/templates/footer');
       }
-      else{
-        $password = $this->input->post('password');
-        $password1 = $this->input->post('password1');
+      
+      $password = $this->input->post('password');
+      $password1 = $this->input->post('password1');
 
-        if(!password_verify($password, $info['user']['password'])){
-          $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi yang dimasukkan salah</div>');
-          redirect('Password_Masyarakat');
-        } 
-        else{
-          if($password == $password1){
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi sama dengan yang digunakan saat ini</div>');
-            redirect('Password_Masyarakat');
-          } else{
-            $password_hash = password_hash($password1, PASSWORD_DEFAULT);
-            $this->db->set('password', $password_hash);
-            $this->db->where('nik', $this->session->userdata('nik'));
-            $this->db->update('masyarakat');
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kata Sandi berhasil diubah</div>');
-            redirect('Password_Masyarakat');
-          }
-        }
+      if(!password_verify($password, $info['user']['password'])){
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi yang dimasukkan salah</div>');
+        redirect('Password_Masyarakat');
+      } 
+
+      if($password == $password1){
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi sama dengan yang digunakan saat ini</div>');
+        redirect('Password_Masyarakat');
+      }
+      
+      $password_hash = password_hash($password1, PASSWORD_DEFAULT);
+      $this->db->set('password', $password_hash);
+      $this->db->where('nik', $this->session->userdata('nik'));
+      $this->db->update('masyarakat');
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kata Sandi berhasil diubah</div>');
+      redirect('Password_Masyarakat');
       }
     }
   } 

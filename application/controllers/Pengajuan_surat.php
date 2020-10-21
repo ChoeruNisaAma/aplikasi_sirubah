@@ -25,9 +25,7 @@ class Pengajuan_surat extends CI_Controller {
           $this->load->view('Masyarakat/templates/p_footer');
           $this->load->view('Masyarakat/templates/footer');
       } 
-      else {
-        redirect('Auth_Masyarakat');
-      }
+      redirect('Auth_Masyarakat');
     }
 
     public function syarat()

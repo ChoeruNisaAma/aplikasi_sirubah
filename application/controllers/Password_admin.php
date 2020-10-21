@@ -33,19 +33,19 @@
         if(!password_verify($password, $info['admin']['password'])){
           $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi yang dimasukkan salah</div>');
           redirect('Password_admin');
-        } else{
+        } 
 
-          if($password == $password1){
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi sudah pernah digunakan</div>');
-          redirect('Password_admin');
-          }
-            $password_hash = password_hash($password1, PASSWORD_DEFAULT);
-            $this->db->set('password', $password_hash);
-            $this->db->where('username', $this->session->userdata('username'));
-            $this->db->update('administrator');
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kata Sandi berhasil diubah</div>');
-            redirect('Password_admin');
+        if($password == $password1){
+          $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Kata Sandi sudah pernah digunakan</div>');
+        redirect('Password_admin');
         }
+
+        $password_hash = password_hash($password1, PASSWORD_DEFAULT);
+        $this->db->set('password', $password_hash);
+        $this->db->where('username', $this->session->userdata('username'));
+        $this->db->update('administrator');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Kata Sandi berhasil diubah</div>');
+        redirect('Password_admin');
       }
     }
   } 

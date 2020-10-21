@@ -49,72 +49,68 @@
         $this->load->view('Masyarakat/templates/p_footer');
         $this->load->view('Masyarakat/templates/footer');
       }
-      else{
-        $image = $_FILES['image']['name'];
-        
-        $nama = $this->input->post('nama');
-        $kelurahan = $this->input->post('kelurahan');
-        $namart = $this->input->post('rt');
-        $namarw = $this->input->post('rw');
-        $email = $this->input->post('email');
-        $nohp = $this->input->post('nohp');
-        $alamat = $this->input->post('alamat');
 
-        if($image==''){
-
-        }else{
-          $config['allowed_types'] = 'gif|jpg|png';
-          $config['max_size'] = '2048';
-          $config['upload_path'] = './assets/img/profil';
-          $config['encrypt_name'] = TRUE;
-          
-          $this->load->library('upload', $config);
-          $this->upload->initialize($config);
-                
-          if(!$this->upload->do_upload('image')){
-            $flag = 1;
-          }else{
-            $image = $this->upload->data('file_name');
-          } 
-        }
-          
-
-        if(($image=='')||($flag ==1)){
-          $data = array(
-            'nama'   => $nama,
-            'kelurahan'  => $kelurahan,
-            'nama_rt'  => $namart,
-            'nama_rw'  => $namarw,
-            'email_msy'  => $email,
-            'no_hp'  => $nohp,
-            'alamat'  => $alamat
-          );
-        }
-        else{
-          $data = array(
-            'nama'   => $nama,
-            'kelurahan'  => $kelurahan,
-            'nama_rt'  => $namart,
-            'nama_rw'  => $namarw,
-            'email_msy'  => $email,
-            'no_hp'  => $nohp,
-            'alamat'  => $alamat,
-            'profil' => $image
-          ); 
-        }
-
-        $this->db->where('nik', $this->input->post('nik'));
-        $this->db->update('masyarakat', $data);
-          
-
-        if($flag==1){
-          $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf, Foto tidak berhasil diubah. Ukuran foto terlalu besar</div>');
-        }
-        else{
-          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Akun Anda telah berhasil diubah</div>');
-        }
+      $image = $_FILES['image']['name'];
       
-      redirect('Profil_Masyarakat/myprofil');
+      $nama = $this->input->post('nama');
+      $kelurahan = $this->input->post('kelurahan');
+      $namart = $this->input->post('rt');
+      $namarw = $this->input->post('rw');
+      $email = $this->input->post('email');
+      $nohp = $this->input->post('nohp');
+      $alamat = $this->input->post('alamat');
+
+      if($image==''){
+
+      }else{
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '2048';
+        $config['upload_path'] = './assets/img/profil';
+        $config['encrypt_name'] = TRUE;
+        
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+              
+        if(!$this->upload->do_upload('image')){
+          $flag = 1;
+        }else{
+          $image = $this->upload->data('file_name');
+        } 
+      }       
+
+      if(($image=='')||($flag ==1)){
+        $data = array(
+          'nama'   => $nama,
+          'kelurahan'  => $kelurahan,
+          'nama_rt'  => $namart,
+          'nama_rw'  => $namarw,
+          'email_msy'  => $email,
+          'no_hp'  => $nohp,
+          'alamat'  => $alamat
+        );
+      }
+      $data = array(
+        'nama'   => $nama,
+        'kelurahan'  => $kelurahan,
+        'nama_rt'  => $namart,
+        'nama_rw'  => $namarw,
+        'email_msy'  => $email,
+        'no_hp'  => $nohp,
+        'alamat'  => $alamat,
+        'profil' => $image
+      ); 
+
+      $this->db->where('nik', $this->input->post('nik'));
+      $this->db->update('masyarakat', $data);
+        
+
+      if($flag==1){
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf, Foto tidak berhasil diubah. Ukuran foto terlalu besar</div>');
+      }
+      
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Akun Anda telah berhasil diubah</div>');
+    
+    redirect('Profil_Masyarakat/myprofil');
     }  
   }
 

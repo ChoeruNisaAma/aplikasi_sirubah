@@ -11,7 +11,7 @@
                 <div class="p-5">
                   <div class="text-center">
                 <div class="text-left">
-                    <img src="<?= base_url()?>assets/img/sirubah.png" alt="Kecamatan Banyumanik" style="width: 150px;">
+                    <img src="<?= filter_var(base_url())?>assets/img/sirubah.png" alt="Kecamatan Banyumanik" style="width: 150px;">
                     <h4 class="text-center text-black">Silahkan Masuk</h4>
                   <div class="col-lg-12 col-md-12 col-xs-12 mb-1">
                       <marquee onmouseover="this.stop();" onmouseout="this.start();">
@@ -23,15 +23,15 @@
               </div>
             </div>
 
-            <?= $this->session->flashdata('message'); ?>
-            <form class="form-horizontal" action="<?= base_url('Auth_Masyarakat/index'); ?>" method="post">
+            <?= filter_var($this->session->flashdata('message')); ?>
+            <form class="form-horizontal" action="<?= filter_var(base_url('Auth_Masyarakat/index')); ?>" method="post">
             
-            <?= form_error('nik', '<small class="alert alert-danger">', '</small>'); ?>
+            <?= filter_var(form_error('nik', '<small class="alert alert-danger">', '</small>')); ?>
             <div class="input-group form-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
-              <input type="text" class="form-control" id="username" placeholder="NIK" required oninvalid="this.setCustomValidity('NIK harus diisi')" oninput="setCustomValidity('')" name="nik" value="<?= set_value('nik') ?>">
+              <input type="text" class="form-control" id="username" placeholder="NIK" required oninvalid="this.setCustomValidity('NIK harus diisi')" oninput="setCustomValidity('')" name="nik" value="<?= filter_var(set_value('nik'));?>">
             </div>
             
             <div class="input-group form-group">
@@ -45,11 +45,11 @@
               <hr>
               
               <div class="text-center">
-                <a class="small" href="<?= base_url('Auth_Masyarakat/lupa_password'); ?>">Lupa Kata Sandi?</a>
+                <a class="small" href="<?= filter_var(base_url('Auth_Masyarakat/lupa_password'));?>">Lupa Kata Sandi?</a>
               </div>
               
               <div class="text-center">
-                <a class="small" href="<?= base_url('Register'); ?>">Buat Akun</a>
+                <a class="small" href="<?= filter_var(base_url('Register')); ?>">Buat Akun</a>
               </div>
             </form>
                 </div>

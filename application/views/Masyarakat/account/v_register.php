@@ -50,7 +50,7 @@
                     <select id="Kelurahan" class="form-control" name="kelurahan" required>    
                       <option value="">Pilih Kelurahan</option>
                       <?php foreach ($kelurahan as $kelurahan) : ?>
-                        <?= filter_var('<option value="' . $kelurahan["id"] . '">' . $kelurahan["nama_pengurus"] . '</option> '; )?>
+                        <?= filter_var('<option value="' . $kelurahan["id"] . '">' . $kelurahan["nama_pengurus"] . '</option> ' );?>
                       <?php endforeach; ?>
                     </select>
                   </div>

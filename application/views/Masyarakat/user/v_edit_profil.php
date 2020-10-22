@@ -12,19 +12,19 @@
           <div class="form-group row">
             <div class="col-sm-10">
               
-              <?= form_open_multipart('Profil_Masyarakat/edit');?>
+              <?= filter_var(form_open_multipart('Profil_Masyarakat/edit'));?>
                 <div class="form-group row">
                   <strong for="nik" class="col-sm-2 col-form-label">NIK</strong>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="nik" name="nik" value="<?= $user['nik']; ?>" readonly>
+                      <input type="text" class="form-control" id="nik" name="nik" value="<?= filter_var($user['nik']); ?>" readonly>
                     </div>        
                 </div>
 
                 <div class="form-group row">
                   <strong for="nama" class="col-sm-2 col-form-label">Nama Lengkap</strong>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['nama']; ?>">
-                      <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
+                      <input type="text" class="form-control" id="nama" name="nama" value="<?= filter_var($user['nama']); ?>">
+                      <?= filter_var(form_error('nama', '<small class="text-danger pl-3">', '</small>')); ?>
                     </div>        
                 </div>   
 
@@ -34,7 +34,7 @@
                     <div class="value">
                       <select id="kelurahan" class="form-control" id="kelurahan" name="kelurahan">    
                         <?php foreach ($kelurahan as $kelurahan) : ?>
-                          <option value="<?= $kelurahan['id'] ?>"<?php if($user['kelurahan'] == $kelurahan['id']){echo "selected";}?>><?= $kelurahan['nama_pengurus']?></option>
+                          <option value="<?= filter_var($kelurahan['id']);?>"<?php if($user['kelurahan'] == $kelurahan['id']){echo "selected";}?>><?= filter_var($kelurahan['nama_pengurus']);?></option>
                         <?php endforeach; ?>
                       </select>
                     </div>
@@ -44,40 +44,40 @@
                 <div class="form-group row">
                   <strong for="rt" class="col-sm-2 col-form-label">Nama RT</strong>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="rt" name="rt" value="<?= $user['nama_rt']; ?>">
-                    <?= form_error('rt', '<small class="text-danger pl-3">', '</small>'); ?>
+                    <input type="text" class="form-control" id="rt" name="rt" value="<?= filter_var($user['nama_rt']); ?>">
+                    <?= filter_var(form_error('rt', '<small class="text-danger pl-3">', '</small>')); ?>
                   </div>        
                 </div> 
                 
                 <div class="form-group row">
                   <strong for="rw" class="col-sm-2 col-form-label">Nama RW</strong>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="rw" name="rw" value="<?= $user['nama_rw']; ?>">
-                    <?= form_error('rw', '<small class="text-danger pl-3">', '</small>'); ?>
+                    <input type="text" class="form-control" id="rw" name="rw" value="<?= filter_var($user['nama_rw']); ?>">
+                    <?= filter_var(form_error('rw', '<small class="text-danger pl-3">', '</small>')); ?>
                   </div>        
                 </div>
 
                 <div class="form-group row">
                   <strong for="email" class="col-sm-2 col-form-label">Email</strong>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="email" name="email" value="<?= $user['email_msy']; ?>">
-                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                    <input type="text" class="form-control" id="email" name="email" value="<?= filter_var($user['email_msy']); ?>">
+                    <?= filter_var(form_error('email', '<small class="text-danger pl-3">', '</small>')); ?>
                   </div>        
                 </div>
 
                 <div class="form-group row">
                   <strong for="nohp" class="col-sm-2 col-form-label">No Hp</strong>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="nohp" name="nohp" value="<?= $user['no_hp']; ?>">
-                    <?= form_error('nohp', '<small class="text-danger pl-3">', '</small>'); ?>
+                    <input type="text" class="form-control" id="nohp" name="nohp" value="<?= filter_var($user['no_hp']); ?>">
+                    <?= filter_var(form_error('nohp', '<small class="text-danger pl-3">', '</small>')); ?>
                   </div>        
                 </div>
 
                 <div class="form-group row">
                   <strong for="nohp" class="col-sm-2 col-form-label">Alamat</strong>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $user['alamat']; ?>">
-                    <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+                    <input type="text" class="form-control" id="alamat" name="alamat" value="<?= filter_var($user['alamat']); ?>">
+                    <?= filter_var(form_error('alamat', '<small class="text-danger pl-3">', '</small>')); ?>
                   </div>        
                 </div>
 
@@ -86,7 +86,7 @@
                   <div class="col-sm-8">
                     <div class="row">
                       <div class="col-sm-4">
-                        <img src="<?= base_url('assets/img/profil/'). $user['profil']?>" class="img-thumbnail">
+                        <img src="<?= filter_var(base_url('assets/img/profil/'). $user['profil']);?>" class="img-thumbnail">
                       </div>
                       <div class="col-sm-8">
                         <div class="custom-file">
@@ -105,7 +105,7 @@
                 <div class="form-group row">
                   <div class="col">
                     <button type="submit" name="submit" class="btn btn-success"><i class="fas fa-check mx-1"></i>Simpan</button>
-                    <a href="<?= base_url('Profil_Masyarakat/myprofil')?>" class="btn btn-secondary">Batal</a>
+                    <a href="<?= filter_var(base_url('Profil_Masyarakat/myprofil'));?>" class="btn btn-secondary">Batal</a>
                   </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ var url = "http://localhost/si-rubah/";
 	event.preventDefault();
 	if(($('#image1').val()=='') ||($('#image2').val()=='') ||($('#image3').val()=='') ||($('#image4').val()=='') || ($('#image5').val()=='') ||  ($('#image6').val()=='')) {
 			if(
-				$(".pesan_error")
+				$(".pesan_error");
 					.children()
 					.hasClass("alert") != true
 				){
@@ -15,7 +15,7 @@ var url = "http://localhost/si-rubah/";
 					$(".pesan_error>.alert").replaceWith(
 						"<div class="col-7 alert alert-danger">file masih kosong, silahkan unggah berkas yang diperlukan!</div>"
 						);
-				};
+				}
 		return false;
 	}
 

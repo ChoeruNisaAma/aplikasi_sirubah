@@ -16,7 +16,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600" style="font-size: 15px"><?= $this->session->userdata('username');?><i class="mx-2 fa fa-chevron-down" aria-hidden="true"></i></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600" style="font-size: 15px"><?= filter_var($this->session->userdata('username'));?><i class="mx-2 fa fa-chevron-down" aria-hidden="true"></i></span>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

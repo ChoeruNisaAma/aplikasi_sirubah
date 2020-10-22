@@ -1,5 +1,5 @@
 // Set new default font family and font color to mimic Bootstrap's default styling
-Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontFamily = "Nunito", "-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif";
 Chart.defaults.global.defaultFontColor = '#858796';
 
 function number_format(number, decimals, dec_point, thousands_sep) {
@@ -20,8 +20,8 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   if (s[0].length > 3) {
     s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
   }
-  if ((s[1] || '').length < prec) {
-    s[1] = s[1] || '';
+  if ((s[1] || "").length < prec) {
+    s[1] = s[1] || "";
     s[1] += new Array(prec - s[1].length + 1).join('0');
   }
   return s.join(dec);
@@ -109,7 +109,7 @@ var myLineChart = new Chart(ctx, {
       caretPadding: 10,
       callbacks: {
         label: function(tooltipItem, chart) {
-          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || "";
           return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
         }
       }

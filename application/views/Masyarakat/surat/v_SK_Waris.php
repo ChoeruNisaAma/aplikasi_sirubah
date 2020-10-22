@@ -4,7 +4,7 @@
   <!-- Page Heading -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Persyaratan <?= $jenis_srt['jenis'];?></h6>
+      <h6 class="m-0 font-weight-bold text-primary">Persyaratan <?= filter_var($jenis_srt['jenis']);?></h6>
     </div>
     
       <div class="card shadow py-2 px-5">
@@ -12,22 +12,22 @@
           <table class="table table-hover table-bordered table-striped my-auto">          
             <tr>
               <td><strong>Persyaratan</strong></td>
-              <td><?= nl2br(htmlspecialchars($jenis_srt['syarat'])); ?></td>
+              <td><?= filter_var(nl2br(htmlspecialchars($jenis_srt['syarat']))); ?></td>
             </tr>
             
             <tr>
               <td><strong>Biaya</strong></td>
-              <td><?= $jenis_srt['biaya']; ?></td>
+              <td><?= filter_var($jenis_srt['biaya']); ?></td>
             </tr>
             
             <tr>
               <td><strong>Waktu Penyelesaian</strong></td>
-              <td><?= $jenis_srt['waktu']; ?></td>
+              <td><?= filter_var($jenis_srt['waktu']); ?></td>
             </tr>
             
             <tr>
               <td><strong>Produk Pelayanan</strong></td>
-              <td><?= $jenis_srt['produk']; ?></td>
+              <td><?= filter_var($jenis_srt['produk']); ?></td>
             </tr>
           </table> 
         </div>
@@ -41,7 +41,7 @@
                 <div class="col-5">
                   <input type="file" class="custom-file-input" id="image1" name="image1">
                   <label style="width: 510px" class="custom-file-label" for="customFile" id="label_image1">Unggah Berkas</label>
-                  <label class="label">*Surat Pernyataan dari Kelurahan dapat diunduh <a href="<?= base_url().'Pengajuan_surat/download_sp_waris' ?>">disini</a></label> 
+                  <label class="label">*Surat Pernyataan dari Kelurahan dapat diunduh <a href="<?= filter_var(base_url().'Pengajuan_surat/download_sp_waris') ?>">disini</a></label> 
                 </div>
             </div>
 
@@ -74,7 +74,7 @@
           <input type="text" id="controller" hidden value="sk_waris">
           <div>  
             <button type="submit" class="btn btn-success mb-3" id="lihat-syarat" name="syarat">Ajukan Permohonan</button>
-            <a href="<?= base_url('Pengajuan_surat/index')?>" class="btn btn-secondary mb-3">Kembali</a>
+            <a href="<?= filter_var(base_url('Pengajuan_surat/index'));?>" class="btn btn-secondary mb-3">Kembali</a>
           </div>
         </form>
         </div>

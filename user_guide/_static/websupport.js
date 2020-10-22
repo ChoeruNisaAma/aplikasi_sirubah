@@ -29,15 +29,15 @@
   };
 
   $.fn.autogrow.resize = function(textarea) {
-    var lineHeight = parseInt($(textarea).css('line-height'), 10);
-    var lines = textarea.value.split('\n');
+    var lineHeight = parseInt($(textarea).css("line-height"), 10);
+    var lines = textarea.value.split("\n");
     var columns = textarea.cols;
     var lineCount = 0;
     $.each(lines, function() {
       lineCount += Math.ceil(this.length / columns) || 1;
     });
     var height = lineHeight * (lineCount + 1);
-    $(textarea).css('height', height);
+    $(textarea).css("height", height);
   };
 })(jQuery);
 
@@ -50,53 +50,53 @@
   }
 
   function initEvents() {
-    $(document).on("click", 'a.comment-close', function(event) {
+    $(document).on("click", "a.comment-close", function(event) {
       event.preventDefault();
-      hide($(this).attr('id').substring(2));
+      hide($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.vote', function(event) {
+    $(document).on("click", "a.vote", function(event) {
       event.preventDefault();
       handleVote($(this));
     });
-    $(document).on("click", 'a.reply', function(event) {
+    $(document).on("click", "a.reply", function(event) {
       event.preventDefault();
-      openReply($(this).attr('id').substring(2));
+      openReply($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.close-reply', function(event) {
+    $(document).on("click", "a.close-reply", function(event) {
       event.preventDefault();
-      closeReply($(this).attr('id').substring(2));
+      closeReply($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.sort-option', function(event) {
+    $(document).on("click", "a.sort-option", function(event) {
       event.preventDefault();
       handleReSort($(this));
     });
-    $(document).on("click", 'a.show-proposal', function(event) {
+    $(document).on("click", "a.show-proposal", function(event) {
       event.preventDefault();
-      showProposal($(this).attr('id').substring(2));
+      showProposal($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.hide-proposal', function(event) {
+    $(document).on("click", "a.hide-proposal", function(event) {
       event.preventDefault();
-      hideProposal($(this).attr('id').substring(2));
+      hideProposal($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.show-propose-change', function(event) {
+    $(document).on("click", "a.show-propose-change", function(event) {
       event.preventDefault();
-      showProposeChange($(this).attr('id').substring(2));
+      showProposeChange($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.hide-propose-change', function(event) {
+    $(document).on("click", "a.hide-propose-change", function(event) {
       event.preventDefault();
-      hideProposeChange($(this).attr('id').substring(2));
+      hideProposeChange($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.accept-comment', function(event) {
+    $(document).on("click", "a.accept-comment", function(event) {
       event.preventDefault();
-      acceptComment($(this).attr('id').substring(2));
+      acceptComment($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.delete-comment', function(event) {
+    $(document).on("click", "a.delete-comment", function(event) {
       event.preventDefault();
-      deleteComment($(this).attr('id').substring(2));
+      deleteComment($(this).attr("id").substring(2));
     });
-    $(document).on("click", 'a.comment-markup', function(event) {
+    $(document).on("click", "a.comment-markup", function(event) {
       event.preventDefault();
-      toggleCommentMarkupBox($(this).attr('id').substring(2));
+      toggleCommentMarkupBox($(this).attr("id").substring(2));
     });
   }
 
@@ -107,7 +107,7 @@
   function setComparator() {
     // If the first three letters are "asc", sort in ascending order
     // and remove the prefix.
-    if (by.substring(0,3) == 'asc') {
+    if (by.substring(0,3) == "asc") {
       var i = by.substring(3);
       comp = function(a, b) { return a[i] - b[i]; };
     } else {
@@ -116,8 +116,8 @@
     }
 
     // Reset link styles and format the selected sort option.
-    $('a.sel').attr('href', '#').removeClass('sel');
-    $('a.by' + by).removeAttr('href').addClass('sel');
+    $("a.sel").attr("href", "#").removeClass("sel");
+    $("a.by" + by).removeAttr("href").addClass("sel");
   }
 
   /**
@@ -125,14 +125,14 @@
    * the sortBy cookie, use those, otherwise use the default.
    */
   function initComparator() {
-    by = 'rating'; // Default to sort by rating.
+    by = "rating"; // Default to sort by rating.
     // If the sortBy cookie is set, use that instead.
     if (document.cookie.length > 0) {
       var start = document.cookie.indexOf('sortBy=');
-      if (start != -1) {
+      if (start !== -1) {
         start = start + 7;
         var end = document.cookie.indexOf(";", start);
-        if (end == -1) {
+        if (end === -1) {
           end = document.cookie.length;
           by = unescape(document.cookie.substring(start, end));
         }
@@ -458,8 +458,8 @@
     // If this is not an unvote, and the other vote arrow has
     // already been pressed, unpress it.
     if ((d.value !== 0) && (data.vote === d.value * -1)) {
-      $('#' + (d.value == 1 ? 'd' : 'u') + 'u' + d.comment_id).hide();
-      $('#' + (d.value == 1 ? 'd' : 'u') + 'v' + d.comment_id).show();
+      $('#' + (d.value === 1 ? 'd' : 'u') + 'u' + d.comment_id).hide();
+      $('#' + (d.value === 1 ? 'd' : 'u') + 'v' + d.comment_id).show();
     }
 
     // Update the comments rating in the local data.
@@ -469,7 +469,7 @@
 
     // Change the rating text.
     div.find('.rating:first')
-      .text(data.rating + ' point' + (data.rating == 1 ? '' : 's'));
+      .text(data.rating + ' point' + (data.rating === 1 ? '' : 's'));
 
     // Send the vote information to the server.
     $.ajax({
@@ -559,7 +559,7 @@
     }
     // Prettify the comment rating.
     comment.pretty_rating = comment.rating + ' point' +
-      (comment.rating == 1 ? '' : 's');
+      (comment.rating === 1 ? '' : 's');
     // Make a class (for displaying not yet moderated comments differently)
     comment.css_class = comment.displayed ? '' : ' moderate';
     // Create a div for this comment.
@@ -568,7 +568,7 @@
 
     // If the user has voted on this comment, highlight the correct arrow.
     if (comment.vote) {
-      var direction = (comment.vote == 1) ? 'u' : 'd';
+      var direction = (comment.vote === 1) ? 'u' : 'd';
       div.find('#' + direction + 'v' + comment.id).hide();
       div.find('#' + direction + 'u' + comment.id).show();
     }
@@ -622,9 +622,9 @@
     return this.each(function() {
       var id = $(this).attr('id').substring(1);
       var count = COMMENT_METADATA[id];
-      var title = count + ' comment' + (count == 1 ? '' : 's');
+      var title = count + ' comment' + (count === 1 ? '' : 's');
       var image = count > 0 ? opts.commentBrightImage : opts.commentImage;
-      var addcls = count == 0 ? ' nocomment' : '';
+      var addcls = count === 0 ? ' nocomment' : '';
       $(this)
         .append(
           $(document.createElement('a')).attr({

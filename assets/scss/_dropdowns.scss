@@ -2,8 +2,7 @@
 
 .dropdown {
   .dropdown-menu {
-    font-size: $dropdown-font-size;
-    
+    font-size: $dropdown-font-size;    
     .dropdown-header {
       @extend .text-uppercase;
       font-weight: 800;

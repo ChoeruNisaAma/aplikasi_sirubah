@@ -79,8 +79,10 @@ class Auth_admin extends CI_Controller
                     'date_created' => tanggal()
                 ];
             $this->db->insert('user_token', $user_token);
-            $this->_kirimEmail($token);
-
+            if(!$this->_kirimEmail($token)){
+                $this->email->print_debugger();
+            }
+            
             $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Silahkan cek email Anda untuk ganti kata sandi!</div>');
             redirect('Auth_admin');
         }
@@ -136,9 +138,8 @@ class Auth_admin extends CI_Controller
         if($this->email->send()){
             return true;
         }
+            return false;
         
-        $this->email->print_debugger();
-        die;
     }
 
 

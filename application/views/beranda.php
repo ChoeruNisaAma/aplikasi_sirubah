@@ -13,16 +13,16 @@
 
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" type="image/png" href="<?= base_url() ?>assets/img/icon-lambang-kecamatan.png">
+  <link rel="icon" type="image/png" href="<?= filter_var(base_url());?>assets/img/icon-lambang-kecamatan.png">
   <title>Beranda SIRUBAH</title>
 
   <!-- Custom fonts for this template-->
-  <link href="<?= base_url()?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?= filter_var(base_url());?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="<?= base_url()?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="<?= base_url()?>assets/css/sb-admin-2.css" rel="stylesheet">
+  <link href="<?= filter_var(base_url());?>assets/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?= filter_var(base_url());?>assets/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -61,7 +61,7 @@
               <div class="text-white text-center">
                   <strong style="font-size: 30px">Administrator</strong>
                 </div>
-                <a href="<?=base_url('Auth_admin'); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
+                <a href="<?= filter_var(base_url('Auth_admin')); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
               </div>
             </div>
 
@@ -75,7 +75,7 @@
                 <div class="text-white text-center">
                   <strong style="font-size: 30px">Masyarakat</strong>
                 </div>
-                <a href="<?= base_url('Auth_masyarakat'); ?>" class="text-center text-white">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
+                <a href="<?= filter_var(base_url('Auth_masyarakat')); ?>" class="text-center text-white">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
               </div>
             </div>
             
@@ -88,7 +88,7 @@
               <div class="inner text-white text-center">
                 <strong style="font-size: 30px">Pengurus RT</strong>
               </div>
-                <a href="<?=base_url('Login'); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
+                <a href="<?= filter_var(base_url('Login')); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
               </div>
             </div>
 
@@ -101,7 +101,7 @@
               <div class="inner text-white text-center">
                 <strong style="font-size: 30px">Pengurus RW</strong>
               </div>
-                <a href="<?=base_url('Login/index'); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
+                <a href="<?= filter_var(base_url('Login/index')); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
               </div>
             </div>
             
@@ -114,7 +114,7 @@
               <div class="inner text-white text-center">
                 <strong style="font-size: 30px">Kelurahan</strong>
               </div>
-                <a href="<?=base_url('Login/index'); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
+                <a href="<?= filter_var(base_url('Login/index')); ?>"class="text-white text-center">Masuk Disini<i class="fas fa-arrow-circle-right mx-2"></i></a>
               </div>
             </div>
 

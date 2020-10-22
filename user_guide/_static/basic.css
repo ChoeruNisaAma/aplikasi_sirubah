@@ -282,7 +282,7 @@ div.sidebar {
 }
 
 p.sidebar-title {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* -- topics ---------------------------------------------------------------- */
@@ -628,7 +628,7 @@ div.math:hover a.headerlink {
   div.bodywrapper {
     margin: 0 !important;
     width: 100%;
-}
+  }
 
   div.sphinxsidebar,
   div.related,

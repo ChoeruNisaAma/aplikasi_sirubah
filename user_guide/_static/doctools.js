@@ -31,7 +31,7 @@ if (!window.console || !console.firebug) {
  * small helper function to urldecode strings
  */
 jQuery.urldecode = function(x) {
-  return decodeURIComponent(x).replace(/\+/g, ' ');
+  return decodeURIComponent(x).replace(/\+/g, " ");
 };
 
 /**
@@ -45,18 +45,21 @@ jQuery.urlencode = encodeURIComponent;
  * it will always return arrays of strings for the value parts.
  */
 jQuery.getQueryParameters = function(s) {
-  if (typeof s == 'undefined')
+  if (typeof s == "undefined"){
     s = document.location.search;
-  var parts = s.substr(s.indexOf('?') + 1).split('&');
+  }
+  var parts = s.substr(s.indexOf("?") + 1).split("&");
   var result = {};
   for (var i = 0; i < parts.length; i++) {
-    var tmp = parts[i].split('=', 2);
+    var tmp = parts[i].split("=", 2);
     var key = jQuery.urldecode(tmp[0]);
     var value = jQuery.urldecode(tmp[1]);
-    if (key in result)
+    if (key in result){
       result[key].push(value);
-    else
+    }
+    else{
       result[key] = [value];
+    }
   }
   return result;
 };
@@ -132,28 +135,31 @@ var Documentation = {
    */
   TRANSLATIONS : {},
   PLURAL_EXPR : function(n) { return n === 1 ? 0 : 1; },
-  LOCALE : 'unknown',
+  LOCALE : "unknown",
 
   // gettext and ngettext don't access this so that the functions
   // can safely bound to a different name (_ = Documentation.gettext)
   gettext : function(string) {
     var translated = Documentation.TRANSLATIONS[string];
-    if (typeof translated == 'undefined')
+    if (typeof translated == "undefined"){
       return string;
-    return (typeof translated == 'string') ? translated : translated[0];
+    }
+    return (typeof translated == "string") ? translated : translated[0];
   },
 
   ngettext : function(singular, plural, n) {
     var translated = Documentation.TRANSLATIONS[singular];
-    if (typeof translated == 'undefined')
+    if (typeof translated == "undefined"){
       return (n === 1) ? singular : plural;
+    }
     return translated[Documentation.PLURALEXPR(n)];
   },
 
   addTranslations : function(catalog) {
-    for (var key in catalog.messages)
+    for (var key in catalog.messages){
       this.TRANSLATIONS[key] = catalog.messages[key];
-    this.PLURAL_EXPR = new Function('n', 'return +(' + catalog.plural_expr + ')');
+    }
+    this.PLURAL_EXPR = new Function("n", "return +(" + catalog.plural_expr + ")");
     this.LOCALE = catalog.locale;
   },
 
@@ -161,16 +167,16 @@ var Documentation = {
    * add context elements like header anchor links
    */
   addContextElements : function() {
-    $('div[id] > :header:first').each(function() {
-      $('<a class="headerlink">\u00B6</a>').
-      attr('href', '#' + this.id).
-      attr('title', _('Permalink to this headline')).
+    $("div[id] > :header:first").each(function() {
+      $("<a class="headerlink">\u00B6</a>").
+      attr("href", "#" + this.id).
+      attr("title", _("Permalink to this headline")).
       appendTo(this);
     });
-    $('dt[id]').each(function() {
-      $('<a class="headerlink">\u00B6</a>').
-      attr('href', '#' + this.id).
-      attr('title', _('Permalink to this definition')).
+    $("dt[id]").each(function() {
+      $("<a class="headerlink">\u00B6</a>").
+      attr("href", "#" + this.id).
+      attr("title", _("Permalink to this definition")).
       appendTo(this);
     });
   },
@@ -193,18 +199,18 @@ var Documentation = {
     var params = $.getQueryParameters();
     var terms = (params.highlight) ? params.highlight[0].split(/\s+/) : [];
     if (terms.length) {
-      var body = $('div.body');
+      var body = $("div.body");
       if (!body.length) {
-        body = $('body');
+        body = $("body");
       }
       window.setTimeout(function() {
         $.each(terms, function() {
-          body.highlightText(this.toLowerCase(), 'highlighted');
+          body.highlightText(this.toLowerCase(), "highlighted");
         });
       }, 10);
       $('<p class="highlight-link"><a href="javascript:Documentation.' +
-        'hideSearchWords()">' + _('Hide Search Matches') + '</a></p>')
-          .appendTo($('#searchbox'));
+        'hideSearchWords()">' + _("Hide Search Matches") + "</a></p>")
+          .appendTo($("#searchbox"));
     }
   },
 

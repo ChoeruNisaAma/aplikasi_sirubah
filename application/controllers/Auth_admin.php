@@ -137,7 +137,7 @@ class Auth_admin extends CI_Controller
             return true;
         }
         
-        echo $this->email->print_debugger();
+        $this->email->print_debugger();
         die;
     }
 

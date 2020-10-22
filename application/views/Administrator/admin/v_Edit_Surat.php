@@ -18,7 +18,7 @@
                 <div class="form-group row">
                   <strong for="jenis" class="col-sm-2 col-form-label">Jenis Surat</strong>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="jenis" name="jenis" value="<?= $surat['jenis']; ?>">
+                      <input type="text" class="form-control" id="jenis" name="jenis" value="<?= filter_var($surat['jenis']); ?>">
                       <?= form_error('jenis', '<small class="text-danger pl-3">', '</small>'); ?> 
                   </div>
                 </div>        
@@ -26,7 +26,7 @@
                 <div class="form-group row">
                   <strong for="syarat" class="col-sm-2 col-form-label">Persyaratan</strong>
                     <div class="col-sm-8">
-                      <textarea class="form-control" id="syarat" name="syarat"><?= $surat['syarat']; ?></textarea>
+                      <textarea class="form-control" id="syarat" name="syarat"><?= filter_var($surat['syarat']); ?></textarea>
                       <?= form_error('syarat', '<small class="text-danger pl-3">', '</small>'); ?> 
                   </div>
                 </div>        
@@ -34,7 +34,7 @@
                 <div class="form-group row">
                   <strong for="biaya" class="col-sm-2 col-form-label">Biaya</strong>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="biaya" name="biaya" value="<?= $surat['biaya']; ?>">
+                      <input type="text" class="form-control" id="biaya" name="biaya" value="<?= filter_var($surat['biaya']); ?>">
                       <?= form_error('biaya', '<small class="text-danger pl-3">', '</small>'); ?> 
                   </div>
                 </div> 
@@ -42,7 +42,7 @@
                 <div class="form-group row">
                   <strong for="waktu" class="col-sm-2 col-form-label">Waktu Penyelesaian</strong>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="waktu" name="waktu" value="<?= $surat['waktu']; ?>">
+                      <input type="text" class="form-control" id="waktu" name="waktu" value="<?= filter_var($surat['waktu']); ?>">
                       <?= form_error('waktu', '<small class="text-danger pl-3">', '</small>'); ?> 
                   </div>
                 </div> 
@@ -50,8 +50,8 @@
                 <div class="form-group row">
                   <strong for="produk" class="col-sm-2 col-form-label">Produk Pelayanan</strong>
                     <div class="col-sm-8">
-                      <textarea class="form-control" id="produk" name="produk"><?= $surat['produk']; ?></textarea>
-                      <?= form_error('produk', '<small class="text-danger pl-3">', '</small>'); ?> 
+                      <textarea class="form-control" id="produk" name="produk"><?= filter_var($surat['produk']); ?></textarea>
+                      <?= filter_var(form_error('produk', '<small class="text-danger pl-3">', '</small>')); ?> 
                   </div>
                 </div>     
                 <br>

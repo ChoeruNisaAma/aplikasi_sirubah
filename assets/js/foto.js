@@ -1,7 +1,7 @@
 var url = "http://localhost/si-rubah/";
 	$(".kirim_surat").submit(function(event) {
 	event.preventDefault();
-	if(($('#image1').val()==" ") ||($('#image2').val()==" ") ||($('#image3').val()==" ") ||($('#image4').val()==" ") || ($('#image5').val()==" ") ||  ($('#image6').val()==" ")) {
+	if(($('#image1').val()===" ") ||($('#image2').val()===" ") ||($('#image3').val()===" ") ||($('#image4').val()===" ") || ($('#image5').val()===" ") || ($('#image6').val()===" ")) {
 			if(
 				$(".pesan_error");
 					.children()
@@ -51,7 +51,7 @@ $("document").ready(function(){
 			.children()
 			.remove();
 
-		if( !(fileType == match[0] || fileType == match[1] || fileType == match[2] || fileType == match[3] )){
+		if( !(fileType === match[0] || fileType === match[1] || fileType === match[2] || fileType === match[3] )){
 			if(
 				$(".pesan_error")
 					.children()
@@ -75,10 +75,10 @@ $("document").ready(function(){
 			if(
 				$(".pesan_error")
 					.children()
-					.hasClass("alert") != true
+					.hasClass("alert") !== true
 				){
 					$(".pesan_error").prepend(
-						"<div class="col-7 alert alert-danger">Ukuran file terlalu besar, Maksimal ukuran file 12MB!</div>
+						"<div class="col-7 alert alert-danger">Ukuran file terlalu besar, Maksimal ukuran file 12MB!</div>"
 					);
 
 				} else {

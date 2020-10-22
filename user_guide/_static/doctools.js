@@ -45,7 +45,7 @@ jQuery.urlencode = encodeURIComponent;
  * it will always return arrays of strings for the value parts.
  */
 jQuery.getQueryParameters = function(s) {
-  if (typeof s == 'undefined')
+  if (typeof s === 'undefined')
     s = document.location.search;
   var parts = s.substr(s.indexOf('?') + 1).split('&');
   var result = {};
@@ -67,7 +67,7 @@ jQuery.getQueryParameters = function(s) {
  */
 jQuery.fn.highlightText = function(text, className) {
   function highlight(node) {
-    if (node.nodeType == 3) {
+    if (node.nodeType === 3) {
       var val = node.nodeValue;
       var pos = val.toLowerCase().indexOf(text);
       if (pos >= 0 && !jQuery(node.parentNode).hasClass(className)) {
@@ -131,22 +131,22 @@ var Documentation = {
    * i18n support
    */
   TRANSLATIONS : {},
-  PLURAL_EXPR : function(n) { return n == 1 ? 0 : 1; },
+  PLURAL_EXPR : function(n) { return n === 1 ? 0 : 1; },
   LOCALE : 'unknown',
 
   // gettext and ngettext don't access this so that the functions
   // can safely bound to a different name (_ = Documentation.gettext)
   gettext : function(string) {
     var translated = Documentation.TRANSLATIONS[string];
-    if (typeof translated == 'undefined')
+    if (typeof translated === 'undefined')
       return string;
-    return (typeof translated == 'string') ? translated : translated[0];
+    return (typeof translated === 'string') ? translated : translated[0];
   },
 
   ngettext : function(singular, plural, n) {
     var translated = Documentation.TRANSLATIONS[singular];
-    if (typeof translated == 'undefined')
-      return (n == 1) ? singular : plural;
+    if (typeof translated === 'undefined')
+      return (n === 1) ? singular : plural;
     return translated[Documentation.PLURALEXPR(n)];
   },
 
@@ -216,7 +216,7 @@ var Documentation = {
       var src = $(this).attr('src');
       var idnum = $(this).attr('id').substr(7);
       $('tr.cg-' + idnum).toggle();
-      if (src.substr(-9) == 'minus.png')
+      if (src.substr(-9) === 'minus.png')
         $(this).attr('src', src.substr(0, src.length-9) + 'plus.png');
       else
         $(this).attr('src', src.substr(0, src.length-8) + 'minus.png');
@@ -248,7 +248,7 @@ var Documentation = {
     var path = document.location.pathname;
     var parts = path.split(/\//);
     $.each(DOCUMENTATION_OPTIONS.URL_ROOT.split(/\//), function() {
-      if (this == '..')
+      if (this === '..')
         parts.pop();
     });
     var url = parts.join('/');
@@ -259,7 +259,7 @@ var Documentation = {
     $(document).keyup(function(event) {
       var activeElementType = document.activeElement.tagName;
       // don't navigate when in search box or textarea
-      if (activeElementType !== 'TEXTAREA' && activeElementType !== 'INPUT' && activeElementType !== 'SELECT') {
+      if (activeElementType !=== 'TEXTAREA' && activeElementType !=== 'INPUT' && activeElementType !=== 'SELECT') {
         switch (event.keyCode) {
           case 37: // left
             var prevHref = $('link[rel="prev"]').prop('href');

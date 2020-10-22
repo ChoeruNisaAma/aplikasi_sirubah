@@ -12,10 +12,10 @@
         <div class="col-md-4 mb-4">
           <div class="card h-auto">
             <div class="card-body">
-              <h6 class="card-title"><?= $jenis_srt['jenis']; ?></h6>
+              <h6 class="card-title"><?= filter_var($jenis_srt['jenis']); ?></h6>
             </div>
             <div class="card-footer">
-              <a href="<?= base_url('Pengajuan_Surat/syarat/'.$jenis_srt['id_surat']);?>"><button type="button" class="btn btn-info" id="lihat-syarat" name="syarat"> <i class="fas fa-search"></i> Lihat Persyaratan</button></a>
+              <a href="<?= filter_var(base_url('Pengajuan_Surat/syarat/'.$jenis_srt['id_surat']));?>"><button type="button" class="btn btn-info" id="lihat-syarat" name="syarat"> <i class="fas fa-search"></i> Lihat Persyaratan</button></a>
             </div>
           </div>
         </div>

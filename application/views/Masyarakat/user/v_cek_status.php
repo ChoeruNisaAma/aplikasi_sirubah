@@ -6,7 +6,7 @@
       <h1 class="h3 text-black-800">STATUS PERMOHONAN</h1>
     </div>
 
-    <?= $this->session->flashdata('message'); ?>
+    <?= filter_var($this->session->flashdata('message')); ?>
     <!-- Tabs -->
     <div class="card">
       <!-- Nav tabs -->
@@ -56,13 +56,13 @@
                       <?php foreach ($surat_masuk as $surat_masuk) : ?>
                         <tr>
                           <th scope="row"><?= $no; ?></th>
-                          <td><?= $surat_masuk['tanggal']; ?></td>
-                          <td><?= $surat_masuk['jenis']; ?></td>
-                          <td><?= $surat_masuk['keterangan']?></td>
-                          <td><?= $surat_masuk['status']; ?></td>
-                          <td><?= $surat_masuk['komentar']; ?></td>
+                          <td><?= filter_var($surat_masuk['tanggal']); ?></td>
+                          <td><?= filter_var($surat_masuk['jenis']); ?></td>
+                          <td><?= filter_var($surat_masuk['keterangan']);?></td>
+                          <td><?= filter_var($surat_masuk['status']); ?></td>
+                          <td><?= filter_var($surat_masuk['komentar']); ?></td>
                           <td> 
-                            <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= base_url('pengajuan_surat/hapus_pengajuan/'.$surat_masuk['id_surat_masuk'])?>')" data-toggle="modal" data-target="#hapusModal"></a>
+                            <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= filter_var(base_url('pengajuan_surat/hapus_pengajuan/'.$surat_masuk['id_surat_masuk']));?>')" data-toggle="modal" data-target="#hapusModal"></a>
                           </td>  
                         </tr>
                       <?php $no++; ?>
@@ -97,13 +97,13 @@
                     <?php foreach ($surat_ditolak as $surat_ditolak) : ?>
                       <tr>
                         <th scope="row"><?= $noo; ?></th>
-                        <td><?= $surat_ditolak['tanggal']; ?></td>
-                        <td><?= $surat_ditolak['jenis']; ?></td>
-                        <td><?= $surat_ditolak['keterangan'];?></td>
-                        <td><?= $surat_ditolak['status']; ?></td>
-                        <td><?= $surat_ditolak['komentar']; ?></td>
+                        <td><?= filter_var($surat_ditolak['tanggal']); ?></td>
+                        <td><?= filter_var($surat_ditolak['jenis']); ?></td>
+                        <td><?= filter_var($surat_ditolak['keterangan']);?></td>
+                        <td><?= filter_var($surat_ditolak['status']); ?></td>
+                        <td><?= filter_var($surat_ditolak['komentar']); ?></td>
                         <td> 
-                          <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= base_url('pengajuan_surat/hapus_pengajuan/'.$surat_ditolak['id_surat_masuk'])?>')" data-toggle="modal" data-target="#hapusModal"></a>
+                          <a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= filter_var(base_url('pengajuan_surat/hapus_pengajuan/'.$surat_ditolak['id_surat_masuk']));?>')" data-toggle="modal" data-target="#hapusModal"></a>
                         </td>
                       </tr>
                     <?php $noo++; ?>
@@ -137,11 +137,11 @@
                       <?php foreach ($surat_selesai as $surat_selesai) : ?>
                         <tr>
                           <th scope="row"><?= $nooo; ?></th>
-                          <td><?= $surat_selesai['tanggal']; ?></td>
-                          <td><?= $surat_selesai['jenis']; ?></td>
-                          <td><?= $surat_selesai['keterangan']; ?></td>
-                          <td><?= $surat_selesai['status']; ?></td>
-                          <td><?= $surat_selesai['komentar']; ?></td>
+                          <td><?= filter_var($surat_selesai['tanggal']); ?></td>
+                          <td><?= filter_var($surat_selesai['jenis']); ?></td>
+                          <td><?= filter_var($surat_selesai['keterangan']); ?></td>
+                          <td><?= filter_var($surat_selesai['status']); ?></td>
+                          <td><?= filter_var($surat_selesai['komentar']); ?></td>
                         </tr>
                       <?php $nooo++; ?>
                     <?php endforeach; ?>

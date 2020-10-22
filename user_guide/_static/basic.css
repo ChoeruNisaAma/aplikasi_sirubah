@@ -156,8 +156,9 @@ table.indextable ul {
   margin-bottom: 0;
   list-style-type: none;
 }
+
 table.indextable > tbody > tr > td > ul {
-  padding-left: 0em;
+  padding-left: 0.0em;
 }
 
 table.indextable tr.pcap {
@@ -323,7 +324,7 @@ div.admonition dl {
 }
 
 p.admonition-title {
-  margin: 0px 10px 5px 0px;
+  margin: 0.0px 10px 5px 0.0px;
   font-weight: bold;
 }
 
@@ -344,6 +345,7 @@ table caption span.caption-number {
 }
 
 table caption span.caption-text {
+
 }
 
 table.docutils td,
@@ -390,6 +392,7 @@ div.figure p.caption span.caption-number {
 }
 
 div.figure p.caption span.caption-text {
+
 }
 
 /* -- field list styles ----------------------------------------------------- */
@@ -442,12 +445,14 @@ dl {
 }
 
 dd p {
-  margin-top: 0px;
+  margin-top: 0.0px;
 }
 
-dd ul, dd table {
+dd ul,
+dd table {
   margin-bottom: 10px;
 }
+
 dd {
   margin-top: 3px;
   margin-bottom: 10px;
@@ -482,7 +487,7 @@ dl.glossary dt {
   border: 3px solid red;
 }
 
-.footnote:target  {
+.footnote:target {
   background-color: #ffa;
 }
 
@@ -532,7 +537,7 @@ span.pre {
 }
 
 td.linenos pre {
-  padding: 5px 0px;
+  padding: 5px 0.0px;
   border: 0;
   background-color: transparent;
   color: #aaa;
@@ -565,6 +570,7 @@ div.code-block-caption span.caption-number {
 }
 
 div.code-block-caption span.caption-text {
+
 }
 
 div.literal-block-wrapper {
@@ -585,7 +591,8 @@ code.descclassname {
   background-color: transparent;
 }
 
-code.xref, a code {
+code.xref,
+a code {
   background-color: transparent;
   font-weight: bold;
 }
@@ -629,7 +636,7 @@ span.eqno {
 
 span.eqno a.headerlink {
   position: relative;
-  left: 0px;
+  left: 0.0px;
   z-index: 1;
 }
 
@@ -638,7 +645,6 @@ div.math:hover a.headerlink {
 }
 
 /* -- printout stylesheet --------------------------------------------------- */
-
 @media print {
   div.document,
   div.documentwrapper,

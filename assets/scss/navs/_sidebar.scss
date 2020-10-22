@@ -2,8 +2,10 @@
 .sidebar {
   width: $sidebar-collapsed-width;
   min-height: 100vh;
+  
   .nav-item {
     position: relative;
+    
     &:last-child {
       margin-bottom: 1rem;
     }
@@ -12,6 +14,7 @@
       text-align: center;
       padding: 0.75rem 1rem;
       width: $sidebar-collapsed-width;
+      
       span {
         font-size: 0.65rem;
         display: block;
@@ -32,6 +35,7 @@
       top: 2px;
       // Grow In Animation
       @extend .animated--grow-in;
+      
       .collapse-inner {
         border-radius: $border-radius;
         box-shadow: $box-shadow;
@@ -50,6 +54,7 @@
         min-width: 10rem;
         font-size: $dropdown-font-size;
         margin: 0 0 1rem 0;
+        
         .collapse-header {
           margin: 0;
           white-space: nowrap;
@@ -68,6 +73,7 @@
           text-decoration: none;
           border-radius: $border-radius;
           white-space: nowrap;
+         
           &:hover {
             background-color: $gray-200;
           }
@@ -91,6 +97,7 @@
     text-align: center;
     margin-bottom: 1rem;
     cursor: pointer;
+   
     &::after {
       font-weight: 900;
       content: '\f104';
@@ -110,6 +117,7 @@
   &.toggled {
     width: 0 !important;
     overflow: hidden;
+   
     #sidebarToggle::after {
       content: '\f105';
       font-family: 'Font Awesome 5 Free';
@@ -146,6 +154,7 @@
     padding: 0 1rem;
     font-weight: 800;
     font-size: 0.65rem;
+    
     @extend .text-uppercase;
   }
 }
@@ -182,8 +191,7 @@
         width: 100%;
         text-align: left;
         padding: 1rem;
-        width: $sidebar-base-width;
-        
+        width: $sidebar-base-width;        
         i {
           font-size: 0.85rem;
           margin-right: 0.25rem;
@@ -325,6 +333,7 @@
       &:focus,
       &:hover {
         color: $gray-700;
+   
         i {
           color: $gray-700;
         }

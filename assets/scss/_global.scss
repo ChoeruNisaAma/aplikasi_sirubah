@@ -49,6 +49,7 @@ a {
   color: $white;
   background: fade-out($gray-800, 0.5);
   line-height: 46px;
+  
   &:focus,
   &:hover {
     color: white;

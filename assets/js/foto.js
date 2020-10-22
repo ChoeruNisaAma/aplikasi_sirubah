@@ -5,7 +5,7 @@ var url = "http://localhost/si-rubah/";
 			if(
 				$(".pesan_error");
 					.children()
-					.hasClass("alert") != true
+					.hasClass("alert") !== true
 				){
 					$(".pesan_error").prepend(
 						"<div class="col-7 alert alert-danger">file masih kosong, silahkan unggah berkas yang diperlukan!</div>"

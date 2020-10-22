@@ -242,6 +242,7 @@
     &.toggled {
       overflow: visible;
       width: $sidebar-collapsed-width !important;
+      
       .nav-item {
         // Accordion
         .collapse {
@@ -253,6 +254,7 @@
           animation-name: growIn;
           animation-duration: 200ms;
           animation-timing-function: transform cubic-bezier(0.18,1.25,0.4,1), opacity cubic-bezier(0,1,0.4,1);
+          
           .collapse-inner {
             box-shadow: $box-shadow;
             border-radius: $border-radius;
@@ -329,6 +331,7 @@
   .nav-item {
     .nav-link {
       color: $gray-600;
+      
       i {
         color: $gray-400;
       }
@@ -422,6 +425,7 @@
   // Color the sidebar toggler
   #sidebarToggle {
     background-color: fade-out($white, 0.8);
+    
     &::after {
       color: fade-out($white, 0.5);
     }

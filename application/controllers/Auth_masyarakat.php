@@ -75,7 +75,6 @@ class Auth_masyarakat extends CI_Controller
             $this->load->view('Masyarakat/account/v_email');
             $this->load->view('Masyarakat/templates/footer');
         } 
-        else {
             $email = $this->input->post('email');
             $user = $this->db->get_where('masyarakat', ['email_msy' => $email]) -> row_array();
 
@@ -93,12 +92,8 @@ class Auth_masyarakat extends CI_Controller
                 redirect('Auth_Masyarakat');
 
             }
-            else{
                 $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Email belum terdaftar</div>');
                 redirect('Auth_Masyarakat');
-            }
-
-        } 
     }
 
     public function reset_password(){
@@ -112,15 +107,12 @@ class Auth_masyarakat extends CI_Controller
             if($user_token){
                 $this->session->set_userdata('email', $email);
                 $this->changePassword();
-            } else {
+            }
                 $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Ganti Kata Sandi gagal, Token Salah!</div>');
                 redirect('Auth_Masyarakat/lupa_password');
-            }
         }
-        else{
             $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Ganti Kata Sandi gagal, Email belum terdaftar!</div>');
             redirect('Auth_Masyarakat/lupa_password');
-        }
     }
 
     private function _kirimEmail($token)
@@ -147,10 +139,9 @@ class Auth_masyarakat extends CI_Controller
 
         if($this->email->send()){
             return true;
-        } else {
+        }
             echo $this->email->print_debugger();
             die;
-        }
     }
 
     public function changePassword()
@@ -163,7 +154,7 @@ class Auth_masyarakat extends CI_Controller
             $this->load->view('Masyarakat/templates/header', $data);
             $this->load->view('Masyarakat/account/v_lupa_pass');
             $this->load->view('Masyarakat/templates/footer');
-        } else {
+        } 
             $password = password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
             $email = $this->session->userdata('email');
 
@@ -175,6 +166,5 @@ class Auth_masyarakat extends CI_Controller
 
             $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Kata Sandi berhasil diubah, silahkan masuk!</div>');
             redirect('Auth_Masyarakat/index');
-        }
     }
 }

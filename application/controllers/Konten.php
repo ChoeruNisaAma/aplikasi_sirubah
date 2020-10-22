@@ -52,7 +52,6 @@
         $this->load->view('Administrator/templates/p_footer');
         $this->load->view('Administrator/templates/auth_footer', $info);
       } 
-      else{
         $id_konten = $this->input->post('id_konten', true);
         $konten = $this->input->post('konten');
         $isi = $this->input->post('isi'); 
@@ -66,7 +65,6 @@
         $this->db->update('konten_informasi', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Konten berhasil diubah.</div>');
         redirect('Konten/index');
-      }
     }
 
     //fungsi tambah konten

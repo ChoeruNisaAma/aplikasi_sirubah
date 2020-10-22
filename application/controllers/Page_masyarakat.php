@@ -21,8 +21,6 @@
                $this->load->view('Masyarakat/templates/p_footer');
                $this->load->view('Masyarakat/templates/footer');
           } 
-          else {
                redirect('Auth_Masyarakat');
-          }
      }
  }

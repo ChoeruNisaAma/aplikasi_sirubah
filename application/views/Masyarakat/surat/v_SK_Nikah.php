@@ -126,8 +126,7 @@
               <label class="col-sm-3 col-form-label">Keterangan</label>
                 <div>
                   <textarea style="width: 510px" class="form-control" id="keterangan" name="keterangan" required oninvalid="this.setCustomValidity('Deskripsi tujuan harus diisi')" oninput="setCustomValidity('')"></textarea>
-                  <label class="label">Berisi Deskripsi tujuan permohonan</label>
-                  <?= filter_var(form_error('keterangan', '<small class="text-danger pl-3">', '</small>')); ?> 
+                  <label class="label">Berisi Deskripsi tujuan permohonan</label>> 
               </div>
             </div> 
 

@@ -6,7 +6,7 @@
     <h1 class="h3 mb-0">DAFTAR KELURAHAN</h1>
   </div>
   
-  <?= $this->session->flashdata('message'); ?>
+  <?= filter_var($this->session->flashdata('message')); ?>
   <div class="card shadow">
     <div class="container-fluid">
       <div class="row">
@@ -31,13 +31,13 @@
               <?php $no=1; ?>
                 <?php foreach ($instansi as $instansi) : ?>
                 <tr>
-                  <th scope="row"><?= $no; ?></th>
-                  <td><?= $instansi['nama_pengurus']; ?></td>
-                  <td><?= $instansi['lokasi']; ?></td>
-                  <td><?= nl2br(htmlspecialchars($instansi['kontak'])); ?></td>
-                  <td><?= $instansi['username']; ?></td>
+                  <th scope="row"><?= filter_var($no); ?></th>
+                  <td><?= filter_var($instansi['nama_pengurus']); ?></td>
+                  <td><?= filter_var($instansi['lokasi']); ?></td>
+                  <td><?= filter_var(nl2br(htmlspecialchars($instansi['kontak']))); ?></td>
+                  <td><?= filter_var($instansi['username']); ?></td>
                   <!-- <td><img style="width: 150px" src="data:image/jpeg;base64,<?=base64_encode($instansi['foto']);?>"></td> -->
-                  <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= base_url('Kelurahan/hapus/'.$instansi['id_kelurahan'])?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
+                  <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= filter_var(base_url('Kelurahan/hapus/'.$instansi['id_kelurahan']));?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
                 </tr>
                 <?php $no++; ?>
               <?php endforeach; ?>

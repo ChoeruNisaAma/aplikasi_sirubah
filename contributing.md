@@ -4,9 +4,9 @@ CodeIgniter is a community driven project and accepts contributions of code and 
 
 Issues are a quick way to point out a bug. If you find a bug or documentation error in CodeIgniter then please check a few things first:
 
-1.	There is not already an open Issue
-2.	The issue has already been fixed (check the develop branch, or look for closed Issues)
-3.	Is it something really obvious that you can fix yourself?
+1.  There is not already an open Issue
+2.  The issue has already been fixed (check the develop branch, or look for closed Issues)
+3.  Is it something really obvious that you can fix yourself?
 
 Reporting issues is helpful but an even better approach is to send a Pull Request, which is done by "Forking" the main repository and committing to your own copy. This will require you to use the version control system called Git.
 
@@ -86,8 +86,8 @@ Unlike systems like Subversion, Git can have multiple remotes. A remote is the n
 
 If you are using command-line you can do the following:
 
-1.	`git remote add codeigniter git://github.com/bcit-ci/CodeIgniter.git`
-2.	`git pull codeigniter develop`
-3.	`git push origin develop`
+1.  `git remote add codeigniter git://github.com/bcit-ci/CodeIgniter.git`
+2.  `git pull codeigniter develop`
+3.  `git push origin develop`
 
 Now your fork is up to date. This should be done regularly, or before you send a pull request at least.

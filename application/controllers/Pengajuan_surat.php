@@ -127,7 +127,7 @@ class Pengajuan_surat extends CI_Controller {
         $data['nik'] = $this->session->userdata('nik');
         $data['tanggal'] = tanggal();
         $data['keterangan'] = $this->input->post('keterangan');
-      } else {
+      }
         $this->upload->do_upload('image1');
         $data ['berkas1'] = $this->upload->data('file_name');
         $this->upload->do_upload('berkas');
@@ -136,7 +136,6 @@ class Pengajuan_surat extends CI_Controller {
         $data['nik'] = $this->session->userdata('nik');
         $data['tanggal'] = tanggal();
         $data['keterangan'] = $this->input->post('keterangan');
-      }
 
       $this->db->insert('permohonan_surat', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Permohonan Surat Pengantar Berhasil Diajukan</div>');
@@ -162,7 +161,6 @@ class Pengajuan_surat extends CI_Controller {
         $data['tanggal'] = tanggal();
         $data['keterangan'] = $this->input->post('keterangan');
       } 
-      else {
         $this->upload->do_upload('image1');
         $data ['berkas1'] = $this->upload->data('file_name');
         $this->upload->do_upload('berkas1');
@@ -171,7 +169,6 @@ class Pengajuan_surat extends CI_Controller {
         $data ['id_surat'] = '3';
         $data['tanggal'] = tanggal();
         $data['keterangan'] = $this->input->post('keterangan');
-      }
 
       $this->db->insert('permohonan_surat', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Permohonan Surat Pengantar Berhasil Diajukan</div>');
@@ -275,7 +272,6 @@ class Pengajuan_surat extends CI_Controller {
           $data['tanggal'] = tanggal();
           $data['keterangan'] = $this->input->post('keterangan');
         } 
-        else {
           $this->upload->do_upload('image1');
           $data ['berkas1'] = $this->upload->data('file_name');
           $this->upload->do_upload('berkas1');
@@ -288,7 +284,6 @@ class Pengajuan_surat extends CI_Controller {
           $data['nik'] = $this->session->userdata('nik');
           $data['tanggal'] = tanggal();
           $data['keterangan'] = $this->input->post('keterangan');
-        }
 
       $this->db->insert('permohonan_surat', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Permohonan Surat Pengantar Berhasil Diajukan</div>');
@@ -472,7 +467,7 @@ class Pengajuan_surat extends CI_Controller {
         $data['nik'] = $this->session->userdata('nik');
         $data['tanggal'] = tanggal();
         $data['keterangan'] = $this->input->post('keterangan');
-      } else {
+      }
         $this->upload->do_upload('image1');
         $data ['berkas1'] = $this->upload->data('file_name');
         $this->upload->do_upload('image2');
@@ -485,7 +480,7 @@ class Pengajuan_surat extends CI_Controller {
         $data['nik'] = $this->session->userdata('nik');
         $data['tanggal'] = tanggal();
         $data['keterangan'] = $this->input->post('keterangan');
-      }
+        
       $this->db->insert('permohonan_surat', $data);
       $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Permohonan Surat Pengantar Berhasil Diajukan</div>');
       echo json_encode($this->upload->display_errors());

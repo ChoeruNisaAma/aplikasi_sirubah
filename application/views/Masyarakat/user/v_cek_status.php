@@ -55,7 +55,7 @@
                     <?php $no=1; ?>
                       <?php foreach ($surat_masuk as $surat_masuk) : ?>
                         <tr>
-                          <th scope="row"><?= $no; ?></th>
+                          <th scope="row"><?= filter_var($no); ?></th>
                           <td><?= filter_var($surat_masuk['tanggal']); ?></td>
                           <td><?= filter_var($surat_masuk['jenis']); ?></td>
                           <td><?= filter_var($surat_masuk['keterangan']);?></td>
@@ -96,7 +96,7 @@
                   <?php $noo=1; ?>
                     <?php foreach ($surat_ditolak as $surat_ditolak) : ?>
                       <tr>
-                        <th scope="row"><?= $noo; ?></th>
+                        <th scope="row"><?= filter_var($noo); ?></th>
                         <td><?= filter_var($surat_ditolak['tanggal']); ?></td>
                         <td><?= filter_var($surat_ditolak['jenis']); ?></td>
                         <td><?= filter_var($surat_ditolak['keterangan']);?></td>
@@ -136,7 +136,7 @@
                     <?php $nooo=1; ?>
                       <?php foreach ($surat_selesai as $surat_selesai) : ?>
                         <tr>
-                          <th scope="row"><?= $nooo; ?></th>
+                          <th scope="row"><?= filter_var($nooo); ?></th>
                           <td><?= filter_var($surat_selesai['tanggal']); ?></td>
                           <td><?= filter_var($surat_selesai['jenis']); ?></td>
                           <td><?= filter_var($surat_selesai['keterangan']); ?></td>

@@ -6,26 +6,26 @@
     <h1 class="h3 mb-0 text-gray-800">KONTEN INFORMASI</h1>
   </div>
 
-  <?= $this->session->flashdata('message'); ?>
+  <?= filter_var($this->session->flashdata('message')); ?>
     <!-- Illustrations -->
     <div>
-      <a href="<?= base_url('Konten/add');?>" class="btn btn-primary"><i class="fas fa-plus-square"></i> Tambah Konten</a>
+      <a href="<?= filter_var(base_url('Konten/add'));?>" class="btn btn-primary"><i class="fas fa-plus-square"></i> Tambah Konten</a>
     </div>
     <br>
 
     <?php foreach ($konten as $konten) : ?>
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary"><?= $konten['nama_konten']; ?></h6>
+          <h6 class="m-0 font-weight-bold text-primary"><?= filter_var($konten['nama_konten']); ?></h6>
         </div>
 
         <div class="card-body">
-          <p align="justify"><?= nl2br(htmlspecialchars($konten['isi_konten'])); ?></p>
+          <p align="justify"><?= filter_var(nl2br(htmlspecialchars($konten['isi_konten']))); ?></p>
         </div>
 
 
         <div class="card-footer">
-          <a href="<?= base_url('Konten/edit/'.$konten['id_konten']);?>"><button type="button" class="btn btn-primary" id="edit" name="edit"> <i class="fas fa-edit"></i> Edit</button></a>
+          <a href="<?= filter_var(base_url('Konten/edit/'.$konten['id_konten']));?>"><button type="button" class="btn btn-primary" id="edit" name="edit"> <i class="fas fa-edit"></i> Edit</button></a>
           <a data-toggle="modal" data-target="#hapusModal"><button type="button" class="btn btn-danger" id="hapus" name="hapus"> <i class="fas fa-trash-alt"></i> Hapus</button></a>
         </div>
       </div>   
@@ -46,7 +46,7 @@
       <div class="modal-body">Menghapus data mungkin menyebabkan perubahan sistem, pilih "Oke" untuk melanjutkan </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-        <a class="btn btn-primary" href="<?= base_url('Konten/hapus/'.$konten['id_konten'])?>">Oke</a>
+        <a class="btn btn-primary" href="<?= filter_var(base_url('Konten/hapus/'.$konten['id_konten']));?>">Oke</a>
       </div>
     </div>
   </div>

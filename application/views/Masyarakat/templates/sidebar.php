@@ -9,7 +9,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon">
-          <img src="<?= base_url()?>assets/img/logo.jpg" width="50" height="60"><br>  
+          <img src="<?= filter_var(base_url())?>assets/img/logo.jpg" width="50" height="60"><br>  
         </div>
         <div class="sidebar-brand-text mx-3" font-size="100 px">SIRUBAH</div>
       </a>
@@ -19,7 +19,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Page_Masyarakat')?>">
+        <a class="nav-link" href="<?= filter_var(base_url('Page_Masyarakat'));?>">
           <i class="fas fa-home"></i>
           <span>Halaman Utama</span></a>
       </li>
@@ -32,7 +32,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Pengajuan_surat')?>">
+        <a class="nav-link" href="<?= filter_var(base_url('Pengajuan_surat'));?>">
           <i class="fas fa-folder-open"></i>
           <span>Ajukan Permohonan</span>
         </a>
@@ -40,7 +40,7 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Cek_Status')?>">
+        <a class="nav-link" href="<?= filter_var(base_url('Cek_Status'));?>">
           <i class="fas fa-tasks"></i>
           <span>Cek Status</span>
         </a>
@@ -54,7 +54,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Profil_Masyarakat/myprofil');?>">
+        <a class="nav-link" href="<?= filter_var(base_url('Profil_Masyarakat/myprofil'));?>">
           <i class="fas fa-user-circle"></i>
           <span>Profil</span>
         </a>
@@ -62,7 +62,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Password_Masyarakat');?>">
+        <a class="nav-link" href="<?= filter_var(base_url('Password_Masyarakat'));?>">
           <i class="fas fa-cogs"></i>
           <span>Ganti Kata Sandi</span>
         </a>
@@ -100,7 +100,7 @@
         <div class="modal-body">pilih "Keluar" jika Anda telah selesai menggunakan sesi ini!</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-          <a class="btn btn-primary" href="<?= base_url('Auth_Masyarakat/logout')?>">Keluar</a>
+          <a class="btn btn-primary" href="<?= filter_var(base_url('Auth_Masyarakat/logout'));?>">Keluar</a>
         </div>
       </div>
     </div>

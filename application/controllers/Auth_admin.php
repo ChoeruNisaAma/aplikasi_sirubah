@@ -80,9 +80,9 @@ class Auth_admin extends CI_Controller
                 ];
             $this->db->insert('user_token', $user_token);
             if(!$this->_kirimEmail($token)){
-                $this->email->print_debugger();
+               return $this->email->print_debugger();
             }
-            
+
             $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Silahkan cek email Anda untuk ganti kata sandi!</div>');
             redirect('Auth_admin');
         }

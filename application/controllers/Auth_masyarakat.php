@@ -86,7 +86,9 @@ class Auth_masyarakat extends CI_Controller
                         'date_created' => tanggal()
                     ];
                 $this->db->insert('user_token', $user_token);
-                $this->_kirimEmail($token);
+                if(!$this->_kirimEmail($token)){
+                    return $this->email->print_debugger();
+                }
 
                 $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Silahkan cek email Anda untuk ganti kata sandi!</div>');
                 redirect('Auth_Masyarakat');
@@ -140,8 +142,7 @@ class Auth_masyarakat extends CI_Controller
         if($this->email->send()){
             return true;
         }
-            echo $this->email->print_debugger();
-            die;
+            return false;
     }
 
     public function changePassword()

@@ -158,7 +158,7 @@ table.indextable ul {
 }
 
 table.indextable > tbody > tr > td > ul {
-  padding-left: 0.0em;
+  padding-left: 0em;
 }
 
 table.indextable tr.pcap {
@@ -324,7 +324,7 @@ div.admonition dl {
 }
 
 p.admonition-title {
-  margin: 0.0px 10px 5px 0.0px;
+  margin: 0px 10px 5px 0px;
   font-weight: bold;
 }
 
@@ -445,7 +445,7 @@ dl {
 }
 
 dd p {
-  margin-top: 0.0px;
+  margin-top: 0px;
 }
 
 dd ul,
@@ -537,7 +537,7 @@ span.pre {
 }
 
 td.linenos pre {
-  padding: 5px 0.0px;
+  padding: 5px 0px;
   border: 0;
   background-color: transparent;
   color: #aaa;
@@ -636,7 +636,7 @@ span.eqno {
 
 span.eqno a.headerlink {
   position: relative;
-  left: 0.0px;
+  left: 0px;
   z-index: 1;
 }
 

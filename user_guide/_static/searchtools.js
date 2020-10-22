@@ -76,8 +76,9 @@ var Stemmer = function() {
     var re4;
 
     firstch = w.substr(0,1);
-    if (firstch === "y")
+    if (firstch === "y"){
       w = firstch.toUpperCase() + w.substr(1);
+    }
 
     // Step 1a
     re = /^(.+?)(ss|i)es$/;

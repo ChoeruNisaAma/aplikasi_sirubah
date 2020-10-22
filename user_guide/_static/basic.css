@@ -53,7 +53,7 @@ div.sphinxsidebar {
   margin-left: -100%;
   font-size: 90%;
   word-wrap: break-word;
-  overflow-wrap : break-word;
+  overflow-wrap: break-word;
 }
 
 div.sphinxsidebar ul {
@@ -156,7 +156,6 @@ table.indextable ul {
   margin-bottom: 0;
   list-style-type: none;
 }
-
 table.indextable > tbody > tr > td > ul {
   padding-left: 0em;
 }
@@ -198,7 +197,6 @@ table.modindextable td {
 }
 
 /* -- general body styles --------------------------------------------------- */
-
 div.body p, div.body dd, div.body li, div.body blockquote {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -438,7 +436,6 @@ dd p {
 dd ul, dd table {
   margin-bottom: 10px;
 }
-
 dd {
   margin-top: 3px;
   margin-bottom: 10px;

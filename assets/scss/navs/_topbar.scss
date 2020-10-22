@@ -37,6 +37,7 @@
       display: flex;
       align-items: center;
       padding: 0 0.75rem;
+
       &:focus {
         outline: none;
       }
@@ -82,6 +83,7 @@
         position: relative;
         height: 2.5rem;
         width: 2.5rem;
+
         img {
           height: 2.5rem;
           width: 2.5rem;
@@ -113,6 +115,7 @@
   @include media-breakpoint-up(sm) {
     .dropdown {
       position: relative;
+
       .dropdown-menu {
         width: auto;
         right: 0;
@@ -121,6 +124,7 @@
   
     .dropdown-list {
       width: 20rem !important;
+
       .dropdown-item {
         .text-truncate {
           max-width: 13.375rem;

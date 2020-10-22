@@ -1,4 +1,4 @@
-var url = "http://localhost/si-rubah/"
+var url = "http://localhost/si-rubah/";
 	$(".kirim_surat").submit(function(event) {
 	event.preventDefault();
 	if(($('#image1').val()=='') ||($('#image2').val()=='') ||($('#image3').val()=='') ||($('#image4').val()=='') || ($('#image5').val()=='') ||  ($('#image6').val()=='')) {
@@ -8,12 +8,12 @@ var url = "http://localhost/si-rubah/"
 					.hasClass("alert") != true
 				){
 					$(".pesan_error").prepend(
-						'<div class="col-7 alert alert-danger">file masih kosong, silahkan unggah berkas yang diperlukan!</div>'
+						"<div class="col-7 alert alert-danger">file masih kosong, silahkan unggah berkas yang diperlukan!</div>"
 					);
 
 				} else {
 					$(".pesan_error>.alert").replaceWith(
-						'<div class="col-7 alert alert-danger">file masih kosong, silahkan unggah berkas yang diperlukan!</div>'
+						"<div class="col-7 alert alert-danger">file masih kosong, silahkan unggah berkas yang diperlukan!</div>"
 						);
 				};
 		return false;
@@ -21,7 +21,7 @@ var url = "http://localhost/si-rubah/"
 
 	var data = new FormData(this);
 		$.ajax({
-			url: 'http://localhost/si-rubah/Pengajuan_surat/'+$('#controller').val(),
+			url: "http://localhost/si-rubah/Pengajuan_surat/'+$('#controller').val()",
 			type: "POST",
 			dataType: "JSON",
 			data: data,
@@ -41,7 +41,7 @@ var url = "http://localhost/si-rubah/"
 
 $("document").ready(function(){
 	$(".custom-file-input").on("change", function(){
-		var id = $(this).attr('id');
+		var id = $(this).attr("id");
 		var file = this.files[0];
 		var fileType = file.type;
 		var fileSize = file.size;
@@ -58,12 +58,12 @@ $("document").ready(function(){
 					.hasClass("alert") != true
 				){
 					$(".pesan_error").prepend(
-						'<div class="col-7 alert alert-danger">Format tidak didukung, silahkan upload file JPG, JPEG, PNG atau PDF!</div>'
+						"<div class="col-7 alert alert-danger">Format tidak didukung, silahkan upload file JPG, JPEG, PNG atau PDF!</div>"
 					);
 
 				} else {
 					$(".pesan_error>.alert").replaceWith(
-						'<div class="col-7 alert alert-danger">Format tidak didukung, silahkan upload file JPG, JPEG, PNG atau PDF!</div>'
+						"<div class="col-7 alert alert-danger">Format tidak didukung, silahkan upload file JPG, JPEG, PNG atau PDF!</div>"
 						);
 				};
 				$('#'+id).val('');
@@ -71,23 +71,23 @@ $("document").ready(function(){
 			return false; 
 		};
 
-		if (fileSize >= 12097152){
+		if (fileSize >= 120000000){
 			if(
 				$(".pesan_error")
 					.children()
 					.hasClass("alert") != true
 				){
 					$(".pesan_error").prepend(
-						'<div class="col-7 alert alert-danger">Ukuran file terlalu besar, Maksimal ukuran file 12MB!</div>'
+						"<div class="col-7 alert alert-danger">Ukuran file terlalu besar, Maksimal ukuran file 12MB!</div>
 					);
 
 				} else {
 					$(".pesan_error>.alert").replaceWith(
-						'<div class="col-7 alert alert-danger">Ukuran file terlalu besar, Maksimal ukuran file 12MB!</div>'
+						"<div class="col-7 alert alert-danger">Ukuran file terlalu besar, Maksimal ukuran file 12MB!</div>"
 						);
 				}
 			$('#'+id).val('');
-				$('#label_'+id).html('Unggah Berkas');
+				$('#label_'+id).html("Unggah Berkas");
 			return false;
 		}
 	});

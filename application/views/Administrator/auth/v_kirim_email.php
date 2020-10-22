@@ -14,28 +14,28 @@
                 <div class="p-5">
                   <div class="text-center">
                     <div class="text-left">
-                      <img src="<?= base_url()?>assets/img/sirubah.png" alt="Kecamatan Banyumanik" style="width: 150px;">
+                      <img src="<?= filter_var(base_url())?>assets/img/sirubah.png" alt="Kecamatan Banyumanik" style="width: 150px;">
                       <h4 class="text-center text-black">Reset Kata Sandi</h4>
                       <hr>
                     </div>
                   </div>
 
 
-                  <?= $this->session->flashdata('message'); ?>
-                  <form class="form-signin" action="<?= base_url('Auth_admin/lupa_password'); ?>" method="post">
-                  <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
+                  <?= filter_var($this->session->flashdata('message')); ?>
+                  <form class="form-signin" action="<?= filter_var(base_url('Auth_admin/lupa_password')); ?>" method="post">
+                  <?= filter_var(form_error('email', '<small class="text-danger">', '</small>')); ?>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input type="text" class="form-control form-control-user" id="email" placeholder="Alamat Email" name="email" value="<?= set_value('email') ?>">
+                    <input type="text" class="form-control form-control-user" id="email" placeholder="Alamat Email" name="email" value="<?= filter_var(set_value('email'));?>">
                   </div>
                    
                   <button type="submit" class="btn btn-primary btn-user btn-block">Kirim</button>
                   <hr>
 
                   <div class="text-center">
-                    <a class="small" href="<?= base_url('Auth_admin/index'); ?>">Kembali ke Halaman Masuk</a>
+                    <a class="small" href="<?= filter_var(base_url('Auth_admin/index')); ?>">Kembali ke Halaman Masuk</a>
                   </div>
                 </form>
               </div>

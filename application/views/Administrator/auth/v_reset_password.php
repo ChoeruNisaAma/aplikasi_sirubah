@@ -14,17 +14,17 @@
                 <div class="p-5">
                   <div class="text-center">
                      <div class="text-left">
-                    <img src="<?= base_url()?>assets/img/sirubah.png" alt="Kecamatan Banyumanik" style="width: 150px;">
+                    <img src="<?= filter_var(base_url())?>assets/img/sirubah.png" alt="Kecamatan Banyumanik" style="width: 150px;">
                     <h4 class="text-center text-black">Reset Kata Sandi</h4>
                     <hr>
                     </div>
-                    <h5 class="mb-4"><?= $this->session->userdata('email'); ?></h5>
+                    <h5 class="mb-4"><?= filter_var($this->session->userdata('email'));?></h5>
                   </div>
 
-                  <?= $this->session->flashdata('message'); ?>
-                  <form class="form-signin" action="<?= base_url('Auth_admin/changePassword'); ?>" method="post">
+                  <?= filter_var($this->session->flashdata('message')); ?>
+                  <form class="form-signin" action="<?= filter_var(base_url('Auth_admin/changePassword'));?>" method="post">
                   
-                  <?= form_error('password1', '<small class="alert alert-warning" pl-10>', '</small>'); ?>
+                  <?= filter_var(form_error('password1', '<small class="alert alert-warning" pl-10>', '</small>')); ?>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -32,7 +32,7 @@
                     <input type="password" class="form-control" placeholder="Kata Sandi" name="password1" id="password1">
                   </div>
 
-                  <?= form_error('password2', '<small class="alert alert-warning" pl-10>', '</small>'); ?>
+                  <?= filter_var(form_error('password2', '<small class="alert alert-warning" pl-10>', '</small>')); ?>
                   <div class="input-group form-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-key"></i></span>

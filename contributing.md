@@ -66,15 +66,15 @@ Easy way GitHub allows in-line editing of files for making simple typo changes a
 
 Hard way The best way to contribute is to "clone" your fork of CodeIgniter to your development area. That sounds like some jargon, but "forking" on GitHub means "making a copy of that repo to your account" and "cloning" means "copying that code to your environment so you can work on it".
 
-1.	[Set up Git](https://help.github.com/en/articles/set-up-git) (Windows, Mac & Linux)
-2.	Go to the [CodeIgniter repo](https://github.com/bcit-ci/CodeIgniter)
-3.	[Fork it](https://help.github.com/en/articles/fork-a-repo)
-4.	[Clone](https://help.github.com/en/articles/fetching-a-remote#clone) your forked CodeIgniter repo: git@github.com:<your-name>/CodeIgniter.git.
-5.	Checkout the "develop" branch. At this point you are ready to start making changes.
-6.	Fix existing bugs on the Issue tracker after taking a look to see nobody else is working on them.
-7.	[Commit](https://help.github.com/en/articles/adding-a-file-to-a-repository-using-the-command-line) the files
-8.	[Push](https://help.github.com/en/articles/pushing-to-a-remote) your develop branch to your fork
-9.	[Send a pull request](https://help.github.com/en/articles/creating-a-pull-request)
+1.  [Set up Git](https://help.github.com/en/articles/set-up-git) (Windows, Mac & Linux)
+2.  Go to the [CodeIgniter repo](https://github.com/bcit-ci/CodeIgniter)
+3.  [Fork it](https://help.github.com/en/articles/fork-a-repo)
+4.  [Clone](https://help.github.com/en/articles/fetching-a-remote#clone) your forked CodeIgniter repo: git@github.com:<your-name>/CodeIgniter.git.
+5.  Checkout the "develop" branch. At this point you are ready to start making changes.
+6.  Fix existing bugs on the Issue tracker after taking a look to see nobody else is working on them.
+7.  [Commit](https://help.github.com/en/articles/adding-a-file-to-a-repository-using-the-command-line) the files
+8.  [Push](https://help.github.com/en/articles/pushing-to-a-remote) your develop branch to your fork
+9.  [Send a pull request](https://help.github.com/en/articles/creating-a-pull-request)
 
 The Reactor Engineers will now be alerted about the change and at least one of the team will respond. If your change fails to meet the guidelines it will be bounced, or feedback will be provided to help you improve it.
 

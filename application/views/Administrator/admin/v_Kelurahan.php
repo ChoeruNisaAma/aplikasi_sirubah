@@ -23,7 +23,6 @@
                 <th scope="col">Alamat</th>
                 <th scope="col">Kontak</th>
                 <th scope="col">Username</th>
-                <!-- <th scope="col">Profil</th> -->
                 <th scope="col"></th>
               </tr>
             </thead>
@@ -36,7 +35,6 @@
                   <td><?= filter_var($instansi['lokasi']); ?></td>
                   <td><?= filter_var(nl2br(htmlspecialchars($instansi['kontak']))); ?></td>
                   <td><?= filter_var($instansi['username']); ?></td>
-                  <!-- <td><img style="width: 150px" src="data:image/jpeg;base64,<?=base64_encode($instansi['foto']);?>"></td> -->
                   <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= filter_var(base_url('Kelurahan/hapus/'.$instansi['id_kelurahan']));?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
                 </tr>
                 <?php $no++; ?>
@@ -60,7 +58,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('Kelurahan'); ?>" method="post">
+      <form action="<?= filter_var(base_url('Kelurahan')); ?>" method="post">
         <div class="modal-body">
           <div class="form-group">
             <input type="text" name="instansi" class="form-control" id="instansi" placeholder="Nama Kelurahan" required oninvalid="this.setCustomValidity('Nama Kelurahan harus diisi')" oninput="setCustomValidity('')"><br>

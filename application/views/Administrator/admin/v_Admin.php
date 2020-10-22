@@ -5,7 +5,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0">DAFTAR ADMINISTRATOR</h1>
   </div>
-  <?= $this->session->flashdata('message'); ?>
+  <?= filter_var($this->session->flashdata('message')); ?>
     <div class="card shadow">
       <div class="container-fluid">
       <div class="row">
@@ -25,9 +25,9 @@
               <?php $no=1; ?>
               <?php foreach ($admin as $admin) : ?>
               <tr>
-                <th scope="row"><?= $no; ?></th>
-                <td><?= $admin['username']; ?></td>
-                <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= base_url('Administrator/hapus/'.$admin['username'])?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
+                <th scope="row"><?= filter_var($no); ?></th>
+                <td><?= filter_var($admin['username']); ?></td>
+                <td><a class="fas fa-trash-alt" style="color:red" onClick="deleteConfirm('<?= filter_var(base_url('Administrator/hapus/'.$admin['username']));?>')" data-toggle="modal" data-target="#hapusModal"></a></td>
               </tr>
               <?php $no++; ?>
             <?php endforeach; ?>
@@ -51,7 +51,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('Administrator'); ?>" method="post">
+      <form action="<?= filter_var(base_url('Administrator')); ?>" method="post">
         <div class="modal-body">
           <div class="form-group">
             <input type="text" name="username" class="form-control" id="username" placeholder="Username" required oninvalid="this.setCustomValidity('Username harus diisi')" oninput="setCustomValidity('')"><br>

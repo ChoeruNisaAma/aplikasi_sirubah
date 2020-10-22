@@ -5,7 +5,7 @@
   <div class="d-sm-flex align-items-center justify-content-between mb-3">
     <h1 class="h3 mb-0">JENIS SURAT</h1>
   </div>
-  <?= $this->session->flashdata('message'); ?>
+  <?= filter_var($this->session->flashdata('message')); ?>
     <div class="card shadow">
       <div class="container-fluid">
       <div class="row">
@@ -22,12 +22,12 @@
               <?php $no=1; ?>
               <?php foreach ($jenis_srt as $jenis_srt) : ?>
               <tr>
-                <th scope="row"><?= $no; ?></th>
-                <td><?= $jenis_srt['jenis']; ?></td>
+                <th scope="row"><?= filter_var($no); ?></th>
+                <td><?= filter_var($jenis_srt['jenis']); ?></td>
                 <td>
-                  <a class="badge badge-info text-white" style="font-size: 13px" href="<?= base_url('Surat/syarat/'.$jenis_srt['id_surat']);?>">Detail</a>
-                  <a class="badge badge-primary text-white" style="font-size: 13px" href="<?= base_url('Surat/edit/'.$jenis_srt['id_surat']);?>"> Edit</a>
-                  <a class="badge badge-danger text-white" style="font-size: 13px" onClick="deleteConfirm('<?php echo base_url('Surat/hapus/'.$jenis_srt['id_surat'])?>')" data-toggle="modal" data-target="#hapusModal"> Hapus</a>
+                  <a class="badge badge-info text-white" style="font-size: 13px" href="<?= filter_var(base_url('Surat/syarat/'.$jenis_srt['id_surat']));?>">Detail</a>
+                  <a class="badge badge-primary text-white" style="font-size: 13px" href="<?= filter_var(base_url('Surat/edit/'.$jenis_srt['id_surat']));?>"> Edit</a>
+                  <a class="badge badge-danger text-white" style="font-size: 13px" onClick="deleteConfirm('<?= filter_var(base_url('Surat/hapus/'.$jenis_srt['id_surat']));?>')" data-toggle="modal" data-target="#hapusModal"> Hapus</a>
                 </td>
               </tr>
               <?php $no++; ?>
